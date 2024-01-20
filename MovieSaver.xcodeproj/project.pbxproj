@@ -54,14 +54,30 @@
 		2D03731D2B5BD0F1003745D6 /* MovieSaver */ = {
 			isa = PBXGroup;
 			children = (
-				2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */,
-				2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */,
-				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
-				2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */,
+				2D0373352B5BD49A003745D6 /* Applications */,
+				2D0373362B5BD4BC003745D6 /* Sources */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
 				2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */,
 			);
 			path = MovieSaver;
+			sourceTree = "<group>";
+		};
+		2D0373352B5BD49A003745D6 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */,
+				2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		2D0373362B5BD4BC003745D6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */,
+				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
