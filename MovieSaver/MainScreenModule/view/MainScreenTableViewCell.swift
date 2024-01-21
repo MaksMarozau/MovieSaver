@@ -5,22 +5,25 @@ import UIKit
 final class MainScreenTableViewCell: UITableViewCell {
     
     
-    //MARK: - Properties
+//MARK: - Properties
     
-    let containerView = UIView()
-    let moviePosterImageView = UIImageView()
-    let infoView = UIView()
+    private let containerView = UIView()
+    private let moviePosterImageView = UIImageView()
+    private let infoView = UIView()
+    
+    private let scoreLabel = UILabel()
+    private let nameLabel = UILabel()
     
     
     
-    
-    //MARK: - Initializators
+//MARK: - Initializators
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(containerView)
         containerView.addSubViews(with: moviePosterImageView, infoView)
+        infoView.addSubViews(with: scoreLabel, nameLabel)
         
         setConstraintes()
         configureUI()
@@ -32,7 +35,7 @@ final class MainScreenTableViewCell: UITableViewCell {
     
     
     
-    //MARK: - Setting of constraintes
+//MARK: - Setting of constraintes
     
     private func setConstraintes() {
         
@@ -42,24 +45,34 @@ final class MainScreenTableViewCell: UITableViewCell {
         containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        
         moviePosterImageView.translatesAutoresizingMaskIntoConstraints = false
         moviePosterImageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
         moviePosterImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         moviePosterImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         moviePosterImageView.widthAnchor.constraint(equalToConstant: 197).isActive = true
         
-        
         infoView.translatesAutoresizingMaskIntoConstraints = false
         infoView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
         infoView.leadingAnchor.constraint(equalTo: moviePosterImageView.trailingAnchor).isActive = true
         infoView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         infoView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.centerXAnchor.constraint(equalTo: infoView.centerXAnchor).isActive = true
+        scoreLabel.bottomAnchor.constraint(equalTo: infoView.bottomAnchor, constant: -50).isActive = true
+        scoreLabel.widthAnchor.constraint(equalToConstant: 79).isActive = true
+        scoreLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.centerXAnchor.constraint(equalTo: infoView.centerXAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: 34).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: 108).isActive = true
+        nameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 59).isActive = true
     }
     
     
     
-    //MARK: - Configurations of User Interface
+//MARK: - Configurations of User Interface
     
     private func configureUI() {
         
@@ -68,13 +81,42 @@ final class MainScreenTableViewCell: UITableViewCell {
         containerView.backgroundColor = .customeWhite
         containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        containerView.layer.shadowOpacity = 50
+        containerView.layer.shadowRadius = 10
         
         moviePosterImageView.backgroundColor = .lightGray
         
         infoView.backgroundColor = .clear
-        infoView.layer.shadowColor = UIColor.black.cgColor
-        infoView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        infoView.layer.shadowOpacity = 50
-        infoView.layer.shadowRadius = 10
+        
+        scoreLabel.backgroundColor = .clear
+        scoreLabel.textColor = .fontBlack
+        scoreLabel.font = .manrope(ofSize: 18, style: .regular)
+        scoreLabel.textAlignment = .center
+        scoreLabel.numberOfLines = 1
+        scoreLabel.text = "0.0/10"
+        scoreLabel.attributedText = setAttributedText(with: scoreLabel.text)
+        
+        nameLabel.backgroundColor = .clear
+        nameLabel.font = .manrope(ofSize: 18, style: .medium)
+        nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 0
+        nameLabel.textColor = .fontBlack
+        nameLabel.text = "Spider-Man: No Way Home"
+    }
+    
+    
+    
+//MARK: - Attributed text
+    
+    private func setAttributedText(with text: String?) -> NSAttributedString? {
+        
+        guard let text = text, text.count == 6 else { return nil }
+        let attributedText = NSMutableAttributedString(string: text)
+        let range = NSRange(location: 0, length: 3)
+        
+        attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 18, style: .bold), range: range)
+        return attributedText
     }
 }
