@@ -12,6 +12,9 @@
 		2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */; };
 		2D03732B2B5BD0F3003745D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732A2B5BD0F3003745D6 /* Assets.xcassets */; };
 		2D03732E2B5BD0F3003745D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */; };
+		2D0373392B5BD6E9003745D6 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373382B5BD6E9003745D6 /* MainScreenViewController.swift */; };
+		2D03733D2B5BD72B003745D6 /* MainScreenPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */; };
+		2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2D03732A2B5BD0F3003745D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D03732D2B5BD0F3003745D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D03732F2B5BD0F3003745D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D0373382B5BD6E9003745D6 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresentor.swift; sourceTree = "<group>"; };
+		2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		2D03731D2B5BD0F1003745D6 /* MovieSaver */ = {
 			isa = PBXGroup;
 			children = (
+				2D0373372B5BD56F003745D6 /* MainScreenModule */,
 				2D0373352B5BD49A003745D6 /* Applications */,
 				2D0373362B5BD4BC003745D6 /* Sources */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
@@ -78,6 +85,40 @@
 				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		2D0373372B5BD56F003745D6 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733A2B5BD6ED003745D6 /* view */,
+				2D03733B2B5BD700003745D6 /* presentor */,
+				2D03733E2B5BD732003745D6 /* router */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		2D03733A2B5BD6ED003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373382B5BD6E9003745D6 /* MainScreenViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D03733B2B5BD700003745D6 /* presentor */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */,
+			);
+			path = presentor;
+			sourceTree = "<group>";
+		};
+		2D03733E2B5BD732003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +192,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */,
+				2D03733D2B5BD72B003745D6 /* MainScreenPresentor.swift in Sources */,
+				2D0373392B5BD6E9003745D6 /* MainScreenViewController.swift in Sources */,
+				2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */,
 				2D03731F2B5BD0F1003745D6 /* AppDelegate.swift in Sources */,
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,
 			);
