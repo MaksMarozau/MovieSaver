@@ -1,5 +1,14 @@
 import UIKit
 
+//MARK: - Protocol for extention MainScreenViewController with MVP-archetecture's methods
+
+protocol MainScreenView: AnyObject {
+    
+    func updateData(_ moviesDataArray: [Movie])
+}
+
+
+
 //MARK: - Final class MainScreenViewController
 
 final class MainScreenViewController: UIViewController {
@@ -7,7 +16,11 @@ final class MainScreenViewController: UIViewController {
     
 //MARK: - Properties of class
     
+    var presenter: MainScreenPresenter!
+    
     private let tableView = UITableView()
+    
+    private var movies: [Movie] = []
     
     
     
@@ -32,6 +45,7 @@ final class MainScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
+        viewWillStart()
     }
     
     
@@ -41,8 +55,8 @@ final class MainScreenViewController: UIViewController {
     private func configureNavigationBar() {
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { _ in
-            
+        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { [weak self]_ in
+            self?.presenter.addButtonTapped()
         }))
         title = "My Movie List"
     }
@@ -70,10 +84,16 @@ final class MainScreenViewController: UIViewController {
         
         tableView.backgroundColor = .clear
         tableView.rowHeight = 217
-//        tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
     }
+  
     
-
+    
+//MARK: - Works out before view will start
+    
+    private func viewWillStart() {
+        presenter.loadData()
+    }
 }
 
 
@@ -83,22 +103,39 @@ final class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
+        let movie = movies[indexPath.row]
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainScreenTableViewCell", for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
-
+        
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
+        cell.addContent(imageName: movie.imageName, movieName: movie.name, ratingScore: movie.rating)
         
         return cell
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.tableViewsCellTapped()
+        
+    }
+}
+
+
+
+//MARK: - Extention Extention for MainScreenViewController with protocol MainScreenView
+
+extension MainScreenViewController: MainScreenView {
     
-    
+    func updateData(_ moviesDataArray: [Movie]) {
+        
+        movies = moviesDataArray
+        tableView.reloadData()
+    }
 }

@@ -13,7 +13,7 @@
 		2D03732B2B5BD0F3003745D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732A2B5BD0F3003745D6 /* Assets.xcassets */; };
 		2D03732E2B5BD0F3003745D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */; };
 		2D0373392B5BD6E9003745D6 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373382B5BD6E9003745D6 /* MainScreenViewController.swift */; };
-		2D03733D2B5BD72B003745D6 /* MainScreenPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */; };
+		2D03733D2B5BD72B003745D6 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733C2B5BD72B003745D6 /* MainScreenPresenter.swift */; };
 		2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */; };
 		2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373412B5D388E003745D6 /* MainScreenTableViewCell.swift */; };
 		2D0373452B5D3BB9003745D6 /* UIView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373442B5D3BB9003745D6 /* UIView + Extentions.swift */; };
@@ -25,6 +25,7 @@
 		2D0373622B5D697E003745D6 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735B2B5D697E003745D6 /* Manrope-ExtraBold.ttf */; };
 		2D0373632B5D697E003745D6 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */; };
 		2D0373642B5D697E003745D6 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */; };
+		2D0373672B5D7DA0003745D6 /* MovieModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,7 @@
 		2D03732D2B5BD0F3003745D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D03732F2B5BD0F3003745D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D0373382B5BD6E9003745D6 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
-		2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresentor.swift; sourceTree = "<group>"; };
+		2D03733C2B5BD72B003745D6 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		2D0373412B5D388E003745D6 /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
 		2D0373442B5D3BB9003745D6 /* UIView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extentions.swift"; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		2D03735B2B5D697E003745D6 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
 		2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
 		2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Medium.ttf"; sourceTree = "<group>"; };
+		2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		2D0373362B5BD4BC003745D6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2D0373652B5D7D6F003745D6 /* MovieModel */,
 				2D0373462B5D5CF6003745D6 /* Fonts */,
 				2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */,
 				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
@@ -113,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2D03733A2B5BD6ED003745D6 /* view */,
-				2D03733B2B5BD700003745D6 /* presentor */,
+				2D03733B2B5BD700003745D6 /* presenter */,
 				2D03733E2B5BD732003745D6 /* router */,
 			);
 			path = MainScreenModule;
@@ -128,12 +131,12 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		2D03733B2B5BD700003745D6 /* presentor */ = {
+		2D03733B2B5BD700003745D6 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				2D03733C2B5BD72B003745D6 /* MainScreenPresentor.swift */,
+				2D03733C2B5BD72B003745D6 /* MainScreenPresenter.swift */,
 			);
-			path = presentor;
+			path = presenter;
 			sourceTree = "<group>";
 		};
 		2D03733E2B5BD732003745D6 /* router */ = {
@@ -165,6 +168,14 @@
 				2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2D0373652B5D7D6F003745D6 /* MovieModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */,
+			);
+			path = MovieModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +256,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */,
-				2D03733D2B5BD72B003745D6 /* MainScreenPresentor.swift in Sources */,
+				2D03733D2B5BD72B003745D6 /* MainScreenPresenter.swift in Sources */,
 				2D0373392B5BD6E9003745D6 /* MainScreenViewController.swift in Sources */,
 				2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */,
 				2D03731F2B5BD0F1003745D6 /* AppDelegate.swift in Sources */,
+				2D0373672B5D7DA0003745D6 /* MovieModelStruct.swift in Sources */,
 				2D0373452B5D3BB9003745D6 /* UIView + Extentions.swift in Sources */,
 				2D0373562B5D6933003745D6 /* UIFont + Extentions.swift in Sources */,
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,

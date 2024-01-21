@@ -29,6 +29,7 @@ final class MainScreenTableViewCell: UITableViewCell {
         configureUI()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -118,5 +119,16 @@ final class MainScreenTableViewCell: UITableViewCell {
         
         attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 18, style: .bold), range: range)
         return attributedText
+    }
+    
+    
+    
+//MARK: - Adding of content to cell (public method)
+    
+    func addContent(imageName: String, movieName: String, ratingScore: Double) {
+        
+        moviePosterImageView.image = UIImage(named: imageName)
+        nameLabel.text = movieName
+        scoreLabel.attributedText = setAttributedText(with: String(ratingScore))
     }
 }
