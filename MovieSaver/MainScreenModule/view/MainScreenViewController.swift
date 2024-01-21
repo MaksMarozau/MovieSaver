@@ -19,6 +19,8 @@ final class MainScreenViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(MainScreenTableViewCell.self, forCellReuseIdentifier: "MainScreenTableViewCell")
+        
         view.addSubview(tableView)
 
         setConstraintes()
@@ -52,7 +54,7 @@ final class MainScreenViewController: UIViewController {
     private func setConstraintes() {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 162).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -67,7 +69,7 @@ final class MainScreenViewController: UIViewController {
         view.backgroundColor = .backgroundMain
         
         tableView.backgroundColor = .clear
-        tableView.rowHeight = 212
+        tableView.rowHeight = 217
 //        tableView.separatorStyle = .none
     }
     
@@ -87,8 +89,12 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainScreenTableViewCell", for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
+
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
         
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Some")
         return cell
     }
     
