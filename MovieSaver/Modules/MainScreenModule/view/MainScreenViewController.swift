@@ -58,7 +58,7 @@ final class MainScreenViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { [weak self]_ in
             self?.presenter.addButtonTapped()
         }))
-        title = "My Movie List"
+        navigationItem.title = "My Movie List"
     }
     
 
@@ -68,7 +68,7 @@ final class MainScreenViewController: UIViewController {
     private func setConstraintes() {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 22).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

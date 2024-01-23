@@ -49,5 +49,6 @@ final class MainScreenRouter: MainScreenRouterInput {
     
     func addButtonTapped() {
         
+        navigationController.pushViewController(AddNewViewController(), animated: true)
     }
 }
