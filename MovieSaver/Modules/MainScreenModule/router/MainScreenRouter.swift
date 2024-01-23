@@ -4,8 +4,8 @@ import UIKit
 
 protocol MainScreenRouterInput {
     
-    func tableViewCellTapped()
-    func addButtonTapped()
+    func moveToDetailInfoPage()
+    func moveToAddNewPage()
 }
 
 
@@ -42,13 +42,13 @@ final class MainScreenRouter: MainScreenRouterInput {
     
 //MARK: - Methods from protocol MainScreenRouterInput
     
-    func tableViewCellTapped() {
+    func moveToDetailInfoPage() {
         
     }
     
     
-    func addButtonTapped() {
+    func moveToAddNewPage() {
         
-        navigationController.pushViewController(AddNewViewController(), animated: true)
+        let _ = AddNewRouter(navigationController: navigationController, window: window)
     }
 }

@@ -1,6 +1,15 @@
 import UIKit
 
-//MARK: - Protocol for extention MainScreenViewController with MVP-archetecture's methods
+//MARK: - Protocol for extention AddNewViewController with MVP-archetecture's methods
+
+protocol AddNewView: AnyObject {
+    
+    func updateNameLabel(name: String)
+    func updateRatingLabel(rating: String)
+    func updateDataLabel(data: String)
+    func updateLinkLabel(link: String)
+    func updatePosterImageView()
+}
 
 
 
@@ -10,6 +19,8 @@ final class AddNewViewController: UIViewController {
     
     
 //MARK: - Properties of class
+    
+    var presenter: AddNewPresenter!
    
     private let mainContainerView = UIView()
     
@@ -18,6 +29,7 @@ final class AddNewViewController: UIViewController {
     private let botContainerView = UIView()
     
     private let posterView = UIView()
+    private let addPosterButton = UIButton()
     private let posterImageView = UIImageView()
     
     private let horizontalStackView = UIStackView()
@@ -89,7 +101,7 @@ final class AddNewViewController: UIViewController {
         navigationItem.title = "Add new"
 //        navigationController?.navigationBar.topItem?.backBarButtonItem?.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .save, primaryAction: UIAction(handler: { [ weak self ] _ in
-            
+            self?.presenter.saveTapped()
         }))
     }
     
@@ -104,7 +116,8 @@ final class AddNewViewController: UIViewController {
         
         //top view's subViews
         topContainerView.addSubview(posterView)
-        posterView.addSubview(posterImageView)
+        posterView.addSubViews(with: posterImageView, addPosterButton)
+        posterView.bringSubviewToFront(addPosterButton)
         
         //middle view's subViews
         middleContainerView.addSubview(horizontalStackView)
@@ -170,6 +183,10 @@ final class AddNewViewController: UIViewController {
         posterImageView.centerYAnchor.constraint(equalTo: posterView.centerYAnchor).isActive = true
         posterImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         posterImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        addPosterButton.translatesAutoresizingMaskIntoConstraints = false
+        addPosterButton.widthAnchor.constraint(equalTo: posterView.widthAnchor).isActive = true
+        addPosterButton.heightAnchor.constraint(equalTo: posterView.heightAnchor).isActive = true
 
         
         //Middle view's subViews
@@ -236,6 +253,9 @@ final class AddNewViewController: UIViewController {
         posterImageView.image = UIImage(named: "Image3")
         posterImageView.contentMode = .scaleAspectFill
         
+        addPosterButton.backgroundColor = .clear
+        addPosterButton.addTarget(self, action: #selector(addPosterButtonTapped), for: .touchUpInside)
+        
         
         //Middle view's subViews
         horizontalStackView.axis = .horizontal
@@ -258,22 +278,30 @@ final class AddNewViewController: UIViewController {
             //nameStackView's subViews
         nameLabel.setStandatrtLabelTextAttrs(with: "Name")
         nameValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        nameChangeButton.setChangeButtonAttrs(with: #selector(nameChangeButtonTapped))
+        nameChangeButton.setChangeButtonAttrs()
+        nameChangeButton.addTarget(self, action: #selector(nameChangeButtonTapped), for: .touchUpInside)
+
         
             //ratingStackView's subViews
         ratingLabel.setStandatrtLabelTextAttrs(with: "Your Rating")
         ratingValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        ratingChangeButton.setChangeButtonAttrs(with: #selector(ratingChangeButtonTapped))
+        ratingChangeButton.setChangeButtonAttrs()
+        ratingChangeButton.addTarget(self, action: #selector(ratingChangeButtonTapped), for: .touchUpInside)
+
             
             //dataStackView's subViews
         dataLabel.setStandatrtLabelTextAttrs(with: "Release Date")
         dataValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        dataChangeButton.setChangeButtonAttrs(with: #selector(dataChangeButtonTapped))
+        dataChangeButton.setChangeButtonAttrs()
+        dataChangeButton.addTarget(self, action: #selector(dataChangeButtonTapped), for: .touchUpInside)
+
             
             //linkStackView's subViews
         linkLabel.setStandatrtLabelTextAttrs(with: "YouTube Link")
         linkValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        linkChangeButton.setChangeButtonAttrs(with: #selector(linkChangeButtonTapped))
+        linkChangeButton.setChangeButtonAttrs()
+        linkChangeButton.addTarget(self, action: #selector(linkChangeButtonTapped), for: .touchUpInside)
+
 
         
         //Bottom view's subViews
@@ -287,35 +315,62 @@ final class AddNewViewController: UIViewController {
     }
     
     
-    
-//MARK: - Actions
-    
-    @objc private func nameChangeButtonTapped() {
-        
-    }
-    
-    @objc private func ratingChangeButtonTapped() {
-        
-    }
-    
-    @objc private func dataChangeButtonTapped() {
-        
-    }
-    
-    @objc private func linkChangeButtonTapped() {
-        
-    }
-    
-    
-    
     private func setCornerRadius() {
         
         posterView.layer.cornerRadius = posterView.frame.height / 2
         posterView.clipsToBounds = true
     }
+    
+    
+    
+//MARK: - Actions
+    
+    @objc private func nameChangeButtonTapped() {
+        presenter.nameChangeTapped()
+    }
+    
+    @objc private func ratingChangeButtonTapped() {
+        presenter.ratingChangeTapped()
+    }
+    
+    @objc private func dataChangeButtonTapped() {
+        presenter.dataChangeTapped()
+    }
+    
+    @objc private func linkChangeButtonTapped() {
+        presenter.linkChangeTapped()
+    }
+    
+    @objc private func addPosterButtonTapped() {
+        presenter.addPosterTapped()
+    }
 }
  
 
 
-    //MARK: - Extention Extention for MainScreenViewController with protocol MainScreenView
+//MARK: - Extention Extention for AddNewViewController with protocol AddNewView
+
+extension AddNewViewController: AddNewView {
+    
+    func updateNameLabel(name: String) {
+        nameValueLabel.text = name
+    }
+    
+    func updateRatingLabel(rating: String) {
+        ratingValueLabel.text = rating
+    }
+    
+    func updateDataLabel(data: String) {
+        dataValueLabel.text = data
+    }
+    
+    func updateLinkLabel(link: String) {
+        linkValueLabel.text = link
+    }
+    
+    func updatePosterImageView() {
+        
+    }
+    
+}
 
