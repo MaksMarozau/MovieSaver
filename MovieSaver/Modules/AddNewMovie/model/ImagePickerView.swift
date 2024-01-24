@@ -1,6 +1,6 @@
 import UIKit
 
-//MARK: - Public enum SourceType, witch provides a choise for geting of the image method
+//MARK: - Public enum SourceType, witch provides a choise for method of geting the image
 
 enum SourceType {
     case camera
