@@ -33,6 +33,7 @@
 		2D0373762B5FCF60003745D6 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373752B5FCF60003745D6 /* UIStackView + Extensions.swift */; };
 		2D0373782B5FDC02003745D6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373772B5FDC02003745D6 /* UILabel + Extension.swift */; };
 		2D03737A2B5FE061003745D6 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373792B5FE061003745D6 /* UIButton + Extensions.swift */; };
+		2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03737C2B613B86003745D6 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		2D0373752B5FCF60003745D6 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		2D0373772B5FDC02003745D6 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		2D0373792B5FE061003745D6 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
+		2D03737C2B613B86003745D6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				2D0373722B5FBC73003745D6 /* view */,
 				2D0373732B5FBC7F003745D6 /* presenter */,
 				2D0373742B5FBC93003745D6 /* router */,
+				2D03737B2B613B01003745D6 /* model */,
 			);
 			path = AddNewMovie;
 			sourceTree = "<group>";
@@ -237,6 +240,14 @@
 				2D0373702B5FBC6B003745D6 /* AddNewRouter.swift */,
 			);
 			path = router;
+			sourceTree = "<group>";
+		};
+		2D03737B2B613B01003745D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2D03737C2B613B86003745D6 /* ImagePickerView.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 				2D0373712B5FBC6B003745D6 /* AddNewRouter.swift in Sources */,
 				2D03736F2B5FBC3A003745D6 /* AddNewPresenter.swift in Sources */,
 				2D0373562B5D6933003745D6 /* UIFont + Extensions.swift in Sources */,
+				2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */,
 				2D03737A2B5FE061003745D6 /* UIButton + Extensions.swift in Sources */,
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,
 				2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */,
@@ -479,6 +491,8 @@
 				DEVELOPMENT_TEAM = C99MZRZS9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieSaver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Using the camera to make photos for creataing posters of movies";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Using the photo Library to load photos for creataing posters of movies";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -506,6 +520,8 @@
 				DEVELOPMENT_TEAM = C99MZRZS9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieSaver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Using the camera to make photos for creataing posters of movies";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Using the photo Library to load photos for creataing posters of movies";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

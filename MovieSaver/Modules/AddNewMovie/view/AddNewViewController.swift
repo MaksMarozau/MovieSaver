@@ -8,7 +8,7 @@ protocol AddNewView: AnyObject {
     func updateRatingLabel(rating: String)
     func updateDataLabel(data: String)
     func updateLinkLabel(link: String)
-    func updatePosterImageView()
+    func updatePosterImageView(image: UIImage)
 }
 
 
@@ -75,6 +75,7 @@ final class AddNewViewController: UIViewController {
         addSubviews()
         setConstraintes()
         configureUI()
+        addButtonsTargets()
     }
     
     
@@ -254,7 +255,6 @@ final class AddNewViewController: UIViewController {
         posterImageView.contentMode = .scaleAspectFill
         
         addPosterButton.backgroundColor = .clear
-        addPosterButton.addTarget(self, action: #selector(addPosterButtonTapped), for: .touchUpInside)
         
         
         //Middle view's subViews
@@ -279,28 +279,24 @@ final class AddNewViewController: UIViewController {
         nameLabel.setStandatrtLabelTextAttrs(with: "Name")
         nameValueLabel.setStandatrtLabelTextAttrs(with: "-")
         nameChangeButton.setChangeButtonAttrs()
-        nameChangeButton.addTarget(self, action: #selector(nameChangeButtonTapped), for: .touchUpInside)
 
         
             //ratingStackView's subViews
         ratingLabel.setStandatrtLabelTextAttrs(with: "Your Rating")
         ratingValueLabel.setStandatrtLabelTextAttrs(with: "-")
         ratingChangeButton.setChangeButtonAttrs()
-        ratingChangeButton.addTarget(self, action: #selector(ratingChangeButtonTapped), for: .touchUpInside)
 
             
             //dataStackView's subViews
         dataLabel.setStandatrtLabelTextAttrs(with: "Release Date")
         dataValueLabel.setStandatrtLabelTextAttrs(with: "-")
         dataChangeButton.setChangeButtonAttrs()
-        dataChangeButton.addTarget(self, action: #selector(dataChangeButtonTapped), for: .touchUpInside)
 
             
             //linkStackView's subViews
         linkLabel.setStandatrtLabelTextAttrs(with: "YouTube Link")
         linkValueLabel.setStandatrtLabelTextAttrs(with: "-")
         linkChangeButton.setChangeButtonAttrs()
-        linkChangeButton.addTarget(self, action: #selector(linkChangeButtonTapped), for: .touchUpInside)
 
 
         
@@ -323,7 +319,24 @@ final class AddNewViewController: UIViewController {
     
     
     
+//MARK: - buttons targets
+    
+    func addButtonsTargets() {
+        
+        addPosterButton.addTarget(self, action: #selector(addPosterButtonTapped), for: .touchUpInside)
+        nameChangeButton.addTarget(self, action: #selector(nameChangeButtonTapped), for: .touchUpInside)
+        ratingChangeButton.addTarget(self, action: #selector(ratingChangeButtonTapped), for: .touchUpInside)
+        dataChangeButton.addTarget(self, action: #selector(dataChangeButtonTapped), for: .touchUpInside)
+        linkChangeButton.addTarget(self, action: #selector(linkChangeButtonTapped), for: .touchUpInside)
+    }
+    
+    
+    
 //MARK: - Actions
+    
+    @objc private func addPosterButtonTapped() {
+        presenter.addPosterTapped(with: self)
+    }
     
     @objc private func nameChangeButtonTapped() {
         presenter.nameChangeTapped()
@@ -339,10 +352,6 @@ final class AddNewViewController: UIViewController {
     
     @objc private func linkChangeButtonTapped() {
         presenter.linkChangeTapped()
-    }
-    
-    @objc private func addPosterButtonTapped() {
-        presenter.addPosterTapped()
     }
 }
  
@@ -368,9 +377,9 @@ extension AddNewViewController: AddNewView {
         linkValueLabel.text = link
     }
     
-    func updatePosterImageView() {
-        
+    func updatePosterImageView(image: UIImage) {
+        posterImageView.heightAnchor.constraint(equalTo: posterView.heightAnchor).isActive = true
+        posterImageView.widthAnchor.constraint(equalTo: posterView.widthAnchor).isActive = true
+        posterImageView.image = image
     }
-    
 }
-

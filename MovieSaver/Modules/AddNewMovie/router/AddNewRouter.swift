@@ -34,7 +34,8 @@ final class AddNewRouter: AddNewRouterInput {
         //MARK: - Making of dependencies
 
         let view = AddNewViewController()
-        let presenter = DefaultAddNewPresenter(view: view, router: self)
+        let imagePicker = ImagePickerView()
+        let presenter = DefaultAddNewPresenter(view: view, router: self, imagePicker: imagePicker)
         view.presenter = presenter
         
         navigationController.pushViewController(view, animated: true)
@@ -63,5 +64,4 @@ final class AddNewRouter: AddNewRouterInput {
     func moveToLinkChangeList() {
         
     }
-    
 }
