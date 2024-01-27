@@ -16,6 +16,7 @@ final class RatingView: UIViewController {
     private var rating: String = ""
     
     
+    
 //MARK: - Lifecycle of controller
     
     override func viewDidLoad() {
@@ -81,8 +82,7 @@ final class RatingView: UIViewController {
         
         view.backgroundColor = .backgroundMain
         
-        ratingLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
-        ratingLabel.text = "Your Rating"
+        ratingLabel.setPickersTitleLabelTextAttrs(with: "Your Rating")
                         
         saveButton.setTitle("Save", for: .normal)
         saveButton.setTitleColor(.blueButton, for: .normal)
@@ -110,14 +110,17 @@ extension RatingView: UIPickerViewDelegate, UIPickerViewDataSource {
         return 1
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 101
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let title = String(Double(row) / 10)
         return title
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         rating = String (row / 10)

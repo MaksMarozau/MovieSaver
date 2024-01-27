@@ -85,8 +85,7 @@ final class NameView: UIViewController {
         
         view.backgroundColor = .backgroundMain
         
-        nameLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
-        nameLabel.text = "Film Name"
+        nameLabel.setPickersTitleLabelTextAttrs(with: "Film Name")
         
         nameTextField.borderStyle = .none
         nameTextField.placeholder = "Name"
@@ -109,7 +108,3 @@ final class NameView: UIViewController {
         presenter.saveName(name: name)
     }
 }
-    
-
-
-    //MARK: - Extention Extention for MainScreenViewController with protocol MainScreenView

@@ -1,11 +1,13 @@
 import UIKit
 
-
+//MARK: - Protocols for extention ReleaseDateView with MVP-archetecture's methods
 
 protocol ReleaseDateViewInputProtocol: AnyObject {
     
     func getDate(date: String)
 }
+
+
 
 //MARK: - Final class ReleaseDateView
 
@@ -87,8 +89,7 @@ final class ReleaseDateView: UIViewController {
         
         view.backgroundColor = .backgroundMain
         
-        releaseDateLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
-        releaseDateLabel.text = "Your Rating"
+        releaseDateLabel.setPickersTitleLabelTextAttrs(with: "Your Rating")
         
         releaseDatePickerView.datePickerMode = .date
         releaseDatePickerView.maximumDate = .now

@@ -2,7 +2,7 @@ import UIKit
 
 //MARK: - Protocol for extention AddNewFilmRouter with MVP-archetecture's methods
 
-protocol AddNewFilmRouterInput {
+protocol AddNewFilmRouterInputProtocol {
     
     func back()
     func moveToNameChangePage()
@@ -15,7 +15,7 @@ protocol AddNewFilmRouterInput {
 
 //MARK: - Final class AddNewFilmRouter
 
-final class AddNewFilmRouter: AddNewFilmRouterInput {
+final class AddNewFilmRouter: AddNewFilmRouterInputProtocol {
     
     
 //MARK: - Properties of class
@@ -31,6 +31,7 @@ final class AddNewFilmRouter: AddNewFilmRouterInput {
         self.navigationController = navigationController
         self.window = window
         
+        
         //MARK: - Making of dependencies
 
         let view = AddNewFilmView()
@@ -43,7 +44,7 @@ final class AddNewFilmRouter: AddNewFilmRouterInput {
     
     
     
-    //MARK: - Methods from protocol MainScreenRouterInput
+    //MARK: - Methods from protocol AddNewFilmRouterInputProtocol
 
     func back() {
         navigationController.popViewController(animated: true)

@@ -7,7 +7,7 @@ final class LinkView: UIViewController {
     
 //MARK: - Properties of class
     
-    var presenter: LinkPresenter!
+    var presenter: LinkPresenterProtocol!
     
     private let linkLabel = UILabel()
     private let linkTextField = UITextField()
@@ -85,8 +85,7 @@ final class LinkView: UIViewController {
         
         view.backgroundColor = .backgroundMain
         
-        linkLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
-        linkLabel.text = "YouTube Link"
+        linkLabel.setPickersTitleLabelTextAttrs(with: "YouTube Link")
         
         linkTextField.borderStyle = .none
         linkTextField.placeholder = "Link"

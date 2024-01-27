@@ -96,11 +96,8 @@ final class MainScreenTableViewCell: UITableViewCell {
         scoreLabel.font = .manrope(ofSize: 18, style: .regular)
         scoreLabel.textAlignment = .center
         scoreLabel.numberOfLines = 1
-        scoreLabel.text = "0.0/10"
-        scoreLabel.attributedText = setAttributedText(with: scoreLabel.text)
         
         nameLabel.backgroundColor = .clear
-        nameLabel.setStandatrtLabelTextAttrs(with: "Spider-Man: No Way Home")
         nameLabel.numberOfLines = 0
     }
     
@@ -122,10 +119,10 @@ final class MainScreenTableViewCell: UITableViewCell {
     
 //MARK: - Adding of content to cell (public method)
     
-    func addContent(imageName: String, movieName: String, ratingScore: Double) {
+    func addContent(imageName: String, movieName: String, ratingScore: String) {
         
         moviePosterImageView.image = UIImage(named: imageName)
-        nameLabel.text = movieName
-        scoreLabel.attributedText = setAttributedText(with: String(ratingScore))
+        nameLabel.setStandatrtLabelTextAttrs(with: movieName)
+        scoreLabel.attributedText = setAttributedText(with: "\(ratingScore)/10")
     }
 }

@@ -23,7 +23,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
 //MARK: - Properties of class
     
     unowned private let view: AddNewFilmViewInputProtocol
-    private let router: AddNewFilmRouterInput
+    private let router: AddNewFilmRouterInputProtocol
     private let imagePicker: ImagePickerView
         
     private let namePresenter = NamePresenter()
@@ -40,7 +40,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
     
 //MARK: - Initialization of properties
     
-    init(view: AddNewFilmViewInputProtocol, router: AddNewFilmRouterInput, imagePicker: ImagePickerView) {
+    init(view: AddNewFilmViewInputProtocol, router: AddNewFilmRouterInputProtocol, imagePicker: ImagePickerView) {
         self.view = view
         self.router = router
         self.imagePicker = imagePicker
@@ -84,9 +84,9 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
         viewController.present(actionSheet, animated: true)
     }
     
+    
     func nameChangeTapped() {
         router.moveToNameChangePage()
-        
     }
     
     func ratingChangeTapped() {
@@ -104,15 +104,11 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
 
 
 
+//MARK: - Extension for AddNewFilmPresenter with NamePresenterDelegate
+
 extension AddNewFilmPresenter: NamePresenterDelegate {
     
     func filmNameSaved(by name: String) {
         self.name = name
     }
-    
-    
- 
-    
-    
-    
 }

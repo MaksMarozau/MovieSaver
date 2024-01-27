@@ -46,6 +46,8 @@ final class MainScreenView: UIViewController {
         
         configureNavigationBar()
         viewWillStart()
+        
+        testCell()
     }
     
     
@@ -54,6 +56,7 @@ final class MainScreenView: UIViewController {
     
     private func configureNavigationBar() {
         
+        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { [weak self]_ in
             self?.presenter.addButtonTapped()
@@ -98,7 +101,7 @@ final class MainScreenView: UIViewController {
 
 
 
-//MARK: - Extention for MainScreenViewController with protocols UITableView
+//MARK: - Extention for MainScreenView with protocols UITableView
 
 extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
@@ -122,8 +125,19 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.tableViewsCellTapped()
+        let movie = movies[indexPath.row]
+        presenter.tableViewsCellTapped(with: movie)
         
+    }
+    
+    
+    
+    private func testCell() {
+        
+        let film = Movie(name: "Spider-Man: No Way Home", rating: "9.3", releaseData: "22.08.2023", imageName: "", youTubeLink: "link", description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.")
+        
+        movies.append(film)
+        tableView.reloadData()
     }
 }
 
