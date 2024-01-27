@@ -35,11 +35,11 @@ final class DefaultMainScreenPresenter: MainScreenPresenter {
 //MARK: - Methods from protocol MainScreenPresenter
     
     func tableViewsCellTapped() {
-        router.tableViewCellTapped()
+        router.moveToDetailInfoPage()
     }
     
     func addButtonTapped() {
-        router.addButtonTapped()
+        router.moveToAddNewPage()
     }
     
     func loadData() {

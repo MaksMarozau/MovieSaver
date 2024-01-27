@@ -100,11 +100,8 @@ final class MainScreenTableViewCell: UITableViewCell {
         scoreLabel.attributedText = setAttributedText(with: scoreLabel.text)
         
         nameLabel.backgroundColor = .clear
-        nameLabel.font = .manrope(ofSize: 18, style: .medium)
-        nameLabel.textAlignment = .center
+        nameLabel.setStandatrtLabelTextAttrs(with: "Spider-Man: No Way Home")
         nameLabel.numberOfLines = 0
-        nameLabel.textColor = .fontBlack
-        nameLabel.text = "Spider-Man: No Way Home"
     }
     
     
