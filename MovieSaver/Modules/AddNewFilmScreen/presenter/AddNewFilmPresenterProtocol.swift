@@ -94,7 +94,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
     }
     
     func dataChangeTapped() {
-        
+        router.moveToDataChangeList()
     }
     
     func linkChangeTapped() {

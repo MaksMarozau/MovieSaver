@@ -45,6 +45,8 @@
 		2D0373A12B65320F003745D6 /* RatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A02B65320F003745D6 /* RatingPresenter.swift */; };
 		2D0373A32B65322B003745D6 /* RatingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A22B65322B003745D6 /* RatingRouter.swift */; };
 		2D0373A82B654569003745D6 /* ReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A72B654569003745D6 /* ReleaseView.swift */; };
+		2D0373AA2B65464E003745D6 /* ReleasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A92B65464E003745D6 /* ReleasePresenter.swift */; };
+		2D0373AC2B654659003745D6 /* ReleaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373AB2B654659003745D6 /* ReleaseRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		2D0373A02B65320F003745D6 /* RatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPresenter.swift; sourceTree = "<group>"; };
 		2D0373A22B65322B003745D6 /* RatingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingRouter.swift; sourceTree = "<group>"; };
 		2D0373A72B654569003745D6 /* ReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseView.swift; sourceTree = "<group>"; };
+		2D0373A92B65464E003745D6 /* ReleasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasePresenter.swift; sourceTree = "<group>"; };
+		2D0373AB2B654659003745D6 /* ReleaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +420,7 @@
 		2D0373A52B654547003745D6 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				2D0373A92B65464E003745D6 /* ReleasePresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 		2D0373A62B65454E003745D6 /* router */ = {
 			isa = PBXGroup;
 			children = (
+				2D0373AB2B654659003745D6 /* ReleaseRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -522,12 +528,14 @@
 				2D0373452B5D3BB9003745D6 /* UIView + Extensions.swift in Sources */,
 				2D0373A32B65322B003745D6 /* RatingRouter.swift in Sources */,
 				2D0373782B5FDC02003745D6 /* UILabel + Extension.swift in Sources */,
+				2D0373AA2B65464E003745D6 /* ReleasePresenter.swift in Sources */,
 				2D0373712B5FBC6B003745D6 /* AddNewFilmRouter.swift in Sources */,
 				2D03736F2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift in Sources */,
 				2D0373982B6528C5003745D6 /* LinkPresenter.swift in Sources */,
 				2D0373562B5D6933003745D6 /* UIFont + Extensions.swift in Sources */,
 				2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */,
 				2D03737A2B5FE061003745D6 /* UIButton + Extensions.swift in Sources */,
+				2D0373AC2B654659003745D6 /* ReleaseRouter.swift in Sources */,
 				2D03739A2B652A38003745D6 /* LinkRouter.swift in Sources */,
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,
 				2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */,
