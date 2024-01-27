@@ -1,8 +1,8 @@
 import UIKit
 
-//MARK: - Protocol for extention AddNewViewController with MVP-archetecture's methods
+//MARK: - Protocol for extention AddNewFilmView with MVP-archetecture's methods
 
-protocol AddNewView: AnyObject {
+protocol AddNewFilmViewInputProtocol: AnyObject {
     
     func updateNameLabel(name: String)
     func updateRatingLabel(rating: String)
@@ -13,14 +13,14 @@ protocol AddNewView: AnyObject {
 
 
 
-//MARK: - Final class AddNewViewController
+//MARK: - Final class AddNewFilmView
 
-final class AddNewViewController: UIViewController {
+final class AddNewFilmView: UIViewController {
     
     
 //MARK: - Properties of class
     
-    var presenter: AddNewPresenter!
+    var presenter: AddNewFilmPresenterProtocol!
    
     private let mainContainerView = UIView()
     
@@ -83,6 +83,7 @@ final class AddNewViewController: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
+        presenter.viewWillAppear()
     }
     
     
@@ -98,6 +99,7 @@ final class AddNewViewController: UIViewController {
     
     private func configureNavigationBar() {
         
+        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Add new"
 //        navigationController?.navigationBar.topItem?.backBarButtonItem?.isHidden = true
@@ -357,9 +359,9 @@ final class AddNewViewController: UIViewController {
  
 
 
-//MARK: - Extention Extention for AddNewViewController with protocol AddNewView
+//MARK: -  Extention for AddNewFilmView with protocol AddNewFilmViewInputProtocol
 
-extension AddNewViewController: AddNewView {
+extension AddNewFilmView: AddNewFilmViewInputProtocol {
     
     func updateNameLabel(name: String) {
         nameValueLabel.text = name

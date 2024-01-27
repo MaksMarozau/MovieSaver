@@ -9,9 +9,9 @@ extension UILabel {
         self.text = text
     }
     
-//    func setDescriptionTextAttrs() {
-//        self.textColor = .fontBlack
-//        self.font = .manrope(ofSize: 14, style: .regular)
-//        self.textAlignment = .left
-//    }
+    func setHeadlinesLabelTextAttrs(ofSize size: CGFloat) {
+        self.textColor = .fontBlack
+        self.font = .manrope(ofSize: size, style: .medium)
+        self.textAlignment = .center
+    }
 }

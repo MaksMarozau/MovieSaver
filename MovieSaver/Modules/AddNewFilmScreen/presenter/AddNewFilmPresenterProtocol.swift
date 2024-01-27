@@ -1,8 +1,8 @@
 import UIKit.UIViewController
 
-//MARK: - Protocol for extention DefaultAddNewPresenter with MVP-archetecture's methods
+//MARK: - Protocol for extention AddNewFilmPresenter with MVP-archetecture's methods
 
-protocol AddNewPresenter {
+protocol AddNewFilmPresenterProtocol {
     
     func addPosterTapped(with viewController: UIViewController)
     func saveTapped()
@@ -10,34 +10,55 @@ protocol AddNewPresenter {
     func ratingChangeTapped()
     func dataChangeTapped()
     func linkChangeTapped()
+    func viewWillAppear()
 }
 
 
 
-//MARK: - Final class DefaultAddNewPresenter
+//MARK: - Final class AddNewFilmPresenter
 
-final class DefaultAddNewPresenter: AddNewPresenter  {
+final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
     
     
 //MARK: - Properties of class
     
-    unowned private let view: AddNewView
-    private let router: AddNewRouter
+    unowned private let view: AddNewFilmViewInputProtocol
+    private let router: AddNewFilmRouterInput
     private let imagePicker: ImagePickerView
+        
+    private let namePresenter = NamePresenter()
+    
+    private var name: String? {
+        didSet {
+            if let name {
+                view.updateNameLabel(name: name)
+            }
+        }
+    }
         
 
     
 //MARK: - Initialization of properties
     
-    init(view: AddNewView, router: AddNewRouter, imagePicker: ImagePickerView) {
+    init(view: AddNewFilmViewInputProtocol, router: AddNewFilmRouterInput, imagePicker: ImagePickerView) {
         self.view = view
         self.router = router
         self.imagePicker = imagePicker
+        
+        namePresenter.delegate = self
     }
     
     
     
-//MARK: - Methods from protocol DefaultAddNewPresenter
+//MARK: - Methods from protocol AddNewFilmPresenter
+    
+    func viewWillAppear() {
+        namePresenter.closure = { [weak self] text in
+            print(text)
+            self?.name = text
+        }
+    }
+    
     
     func saveTapped() {
         router.back()
@@ -63,13 +84,13 @@ final class DefaultAddNewPresenter: AddNewPresenter  {
         viewController.present(actionSheet, animated: true)
     }
     
-    
     func nameChangeTapped() {
+        router.moveToNameChangePage()
         
     }
     
     func ratingChangeTapped() {
-        
+        router.moveToRatingChangeList()
     }
     
     func dataChangeTapped() {
@@ -77,6 +98,21 @@ final class DefaultAddNewPresenter: AddNewPresenter  {
     }
     
     func linkChangeTapped() {
-        
+        router.moveToLinkChangePage()
     }
+}
+
+
+
+extension AddNewFilmPresenter: NamePresenterDelegate {
+    
+    func filmNameSaved(by name: String) {
+        self.name = name
+    }
+    
+    
+ 
+    
+    
+    
 }

@@ -1,21 +1,21 @@
 import UIKit
 
-//MARK: - Protocol for extention AddNewRouterInput with MVP-archetecture's methods
+//MARK: - Protocol for extention AddNewFilmRouter with MVP-archetecture's methods
 
-protocol AddNewRouterInput {
+protocol AddNewFilmRouterInput {
     
     func back()
     func moveToNameChangePage()
     func moveToRatingChangeList()
     func moveToDataChangeList()
-    func moveToLinkChangeList()
+    func moveToLinkChangePage()
 }
 
 
 
-//MARK: - Final class AddNewRouter
+//MARK: - Final class AddNewFilmRouter
 
-final class AddNewRouter: AddNewRouterInput {
+final class AddNewFilmRouter: AddNewFilmRouterInput {
     
     
 //MARK: - Properties of class
@@ -33,15 +33,15 @@ final class AddNewRouter: AddNewRouterInput {
         
         //MARK: - Making of dependencies
 
-        let view = AddNewViewController()
+        let view = AddNewFilmView()
         let imagePicker = ImagePickerView()
-        let presenter = DefaultAddNewPresenter(view: view, router: self, imagePicker: imagePicker)
+        let presenter = AddNewFilmPresenter(view: view, router: self, imagePicker: imagePicker)
         view.presenter = presenter
         
         navigationController.pushViewController(view, animated: true)
     }
     
-   
+    
     
     //MARK: - Methods from protocol MainScreenRouterInput
 
@@ -50,18 +50,18 @@ final class AddNewRouter: AddNewRouterInput {
     }
     
     func moveToNameChangePage() {
-        
+        let _ = NameRouter(navigationController: navigationController, window: window)
     }
     
     func moveToRatingChangeList() {
-        
+        let _ = RatingRouter(navigationController: navigationController, window: window)
     }
     
     func moveToDataChangeList() {
         
     }
     
-    func moveToLinkChangeList() {
-        
+    func moveToLinkChangePage() {
+        let _ = LinkRouter(navigationController: navigationController, window: window)
     }
 }

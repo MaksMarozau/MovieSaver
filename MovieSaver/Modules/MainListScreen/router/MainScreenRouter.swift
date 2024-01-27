@@ -31,8 +31,8 @@ final class MainScreenRouter: MainScreenRouterInput {
         
         //MARK: - Making of dependencies
         
-        let view = MainScreenViewController()
-        let presenter = DefaultMainScreenPresenter(view: view, router: self)
+        let view = MainScreenView()
+        let presenter = MainScreenPresenter(view: view, router: self)
         view.presenter = presenter
         
         navigationController.pushViewController(view, animated: true)
@@ -49,6 +49,6 @@ final class MainScreenRouter: MainScreenRouterInput {
     
     func moveToAddNewPage() {
         
-        let _ = AddNewRouter(navigationController: navigationController, window: window)
+        let _ = AddNewFilmRouter(navigationController: navigationController, window: window)
     }
 }

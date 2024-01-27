@@ -1,6 +1,6 @@
-//MARK: - Protocol for extention DefaultMainScreenPresenter with MVP-archetecture's methods
+//MARK: - Protocols for extention MainScreenPresenter with MVP-archetecture's methods
 
-protocol MainScreenPresenter: AnyObject {
+protocol MainScreenPresenterProtocol: AnyObject {
     
     func tableViewsCellTapped()
     func addButtonTapped()
@@ -9,14 +9,14 @@ protocol MainScreenPresenter: AnyObject {
 
 
 
-//MARK: - Final class DefaultMainScreenPresenter
+//MARK: - Final class MainScreenPresenter
 
-final class DefaultMainScreenPresenter: MainScreenPresenter {
+final class MainScreenPresenter: MainScreenPresenterProtocol {
    
     
 //MARK: - Properties of class
     
-    unowned private let view: MainScreenView
+    unowned private let view: MainScreenViewInputProtocol
     private let router: MainScreenRouterInput
     
     private var moviesDataArray: [Movie] = []
@@ -25,14 +25,14 @@ final class DefaultMainScreenPresenter: MainScreenPresenter {
     
 //MARK: - Initialization of properties
     
-    init(view: MainScreenView, router: MainScreenRouter) {
+    init(view: MainScreenViewInputProtocol, router: MainScreenRouter) {
         self.view = view
         self.router = router
     }
     
     
     
-//MARK: - Methods from protocol MainScreenPresenter
+//MARK: - Methods from protocol MainScreenPresenterProtocol
     
     func tableViewsCellTapped() {
         router.moveToDetailInfoPage()

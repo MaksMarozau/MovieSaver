@@ -1,22 +1,22 @@
 import UIKit
 
-//MARK: - Protocol for extention MainScreenViewController with MVP-archetecture's methods
+//MARK: - Protocol for extention MainScreenView with MVP-archetecture's methods
 
-protocol MainScreenView: AnyObject {
+protocol MainScreenViewInputProtocol: AnyObject {
     
     func updateData(_ moviesDataArray: [Movie])
 }
 
 
 
-//MARK: - Final class MainScreenViewController
+//MARK: - Final class MainScreenView
 
-final class MainScreenViewController: UIViewController {
+final class MainScreenView: UIViewController {
 
     
 //MARK: - Properties of class
     
-    var presenter: MainScreenPresenter!
+    var presenter: MainScreenPresenterProtocol!
     
     private let tableView = UITableView()
     
@@ -100,7 +100,7 @@ final class MainScreenViewController: UIViewController {
 
 //MARK: - Extention for MainScreenViewController with protocols UITableView
 
-extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -129,9 +129,9 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 
-//MARK: - Extention Extention for MainScreenViewController with protocol MainScreenView
+//MARK: - Extention Extention for MainScreenView with protocol MainScreenViewInputProtocol
 
-extension MainScreenViewController: MainScreenView {
+extension MainScreenView: MainScreenViewInputProtocol {
     
     func updateData(_ moviesDataArray: [Movie]) {
         
