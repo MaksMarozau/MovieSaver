@@ -9,23 +9,89 @@
 /* Begin PBXBuildFile section */
 		2D03731F2B5BD0F1003745D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */; };
 		2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */; };
-		2D0373232B5BD0F1003745D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373222B5BD0F1003745D6 /* ViewController.swift */; };
-		2D0373262B5BD0F1003745D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0373242B5BD0F1003745D6 /* Main.storyboard */; };
 		2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */; };
 		2D03732B2B5BD0F3003745D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732A2B5BD0F3003745D6 /* Assets.xcassets */; };
 		2D03732E2B5BD0F3003745D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */; };
+		2D0373392B5BD6E9003745D6 /* MainScreenViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373382B5BD6E9003745D6 /* MainScreenViewInputProtocol.swift */; };
+		2D03733D2B5BD72B003745D6 /* MainScreenPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733C2B5BD72B003745D6 /* MainScreenPresenterInputProtocol.swift */; };
+		2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */; };
+		2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373412B5D388E003745D6 /* MainScreenTableViewCell.swift */; };
+		2D0373452B5D3BB9003745D6 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373442B5D3BB9003745D6 /* UIView + Extensions.swift */; };
+		2D0373562B5D6933003745D6 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373552B5D6933003745D6 /* UIFont + Extensions.swift */; };
+		2D03735E2B5D697E003745D6 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D0373572B5D697E003745D6 /* Manrope-Bold.ttf */; };
+		2D03735F2B5D697E003745D6 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D0373582B5D697E003745D6 /* Manrope-Regular.ttf */; };
+		2D0373602B5D697E003745D6 /* Manrope-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D0373592B5D697E003745D6 /* Manrope-Light.ttf */; };
+		2D0373612B5D697E003745D6 /* Manrope-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735A2B5D697E003745D6 /* Manrope-ExtraLight.ttf */; };
+		2D0373622B5D697E003745D6 /* Manrope-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735B2B5D697E003745D6 /* Manrope-ExtraBold.ttf */; };
+		2D0373632B5D697E003745D6 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */; };
+		2D0373642B5D697E003745D6 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */; };
+		2D0373672B5D7DA0003745D6 /* MovieModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */; };
+		2D0373692B5D9D51003745D6 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373682B5D9D51003745D6 /* ToDo.swift */; };
+		2D03736D2B5FBC16003745D6 /* AddNewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03736C2B5FBC16003745D6 /* AddNewFilmView.swift */; };
+		2D03736F2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03736E2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift */; };
+		2D0373712B5FBC6B003745D6 /* AddNewFilmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373702B5FBC6B003745D6 /* AddNewFilmRouter.swift */; };
+		2D0373762B5FCF60003745D6 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373752B5FCF60003745D6 /* UIStackView + Extensions.swift */; };
+		2D0373782B5FDC02003745D6 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373772B5FDC02003745D6 /* UILabel + Extension.swift */; };
+		2D03737A2B5FE061003745D6 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373792B5FE061003745D6 /* UIButton + Extensions.swift */; };
+		2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03737C2B613B86003745D6 /* ImagePickerView.swift */; };
+		2D0373892B628458003745D6 /* NamePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373882B628458003745D6 /* NamePresenterProtocol.swift */; };
+		2D03738B2B628469003745D6 /* NameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03738A2B628469003745D6 /* NameRouter.swift */; };
+		2D03738E2B62B51C003745D6 /* AddNameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */; };
+		2D0373912B652713003745D6 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373902B652713003745D6 /* NameView.swift */; };
+		2D0373932B6527EE003745D6 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373922B6527EE003745D6 /* LinkView.swift */; };
+		2D0373982B6528C5003745D6 /* LinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373972B6528C5003745D6 /* LinkPresenter.swift */; };
+		2D03739A2B652A38003745D6 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373992B652A38003745D6 /* LinkRouter.swift */; };
+		2D03739C2B6530D2003745D6 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03739B2B6530D2003745D6 /* RatingView.swift */; };
+		2D0373A12B65320F003745D6 /* RatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A02B65320F003745D6 /* RatingPresenter.swift */; };
+		2D0373A32B65322B003745D6 /* RatingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A22B65322B003745D6 /* RatingRouter.swift */; };
+		2D0373A82B654569003745D6 /* ReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A72B654569003745D6 /* ReleaseView.swift */; };
+		2D0373AA2B65464E003745D6 /* ReleasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373A92B65464E003745D6 /* ReleasePresenter.swift */; };
+		2D0373AC2B654659003745D6 /* ReleaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373AB2B654659003745D6 /* ReleaseRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D03731B2B5BD0F1003745D6 /* MovieSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D0373222B5BD0F1003745D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2D0373252B5BD0F1003745D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D0373282B5BD0F1003745D6 /* MovieSaver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieSaver.xcdatamodel; sourceTree = "<group>"; };
 		2D03732A2B5BD0F3003745D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D03732D2B5BD0F3003745D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D03732F2B5BD0F3003745D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D0373382B5BD6E9003745D6 /* MainScreenViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewInputProtocol.swift; sourceTree = "<group>"; };
+		2D03733C2B5BD72B003745D6 /* MainScreenPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenterInputProtocol.swift; sourceTree = "<group>"; };
+		2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		2D0373412B5D388E003745D6 /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
+		2D0373442B5D3BB9003745D6 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		2D0373552B5D6933003745D6 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		2D0373572B5D697E003745D6 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
+		2D0373582B5D697E003745D6 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
+		2D0373592B5D697E003745D6 /* Manrope-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Light.ttf"; sourceTree = "<group>"; };
+		2D03735A2B5D697E003745D6 /* Manrope-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraLight.ttf"; sourceTree = "<group>"; };
+		2D03735B2B5D697E003745D6 /* Manrope-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
+		2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Medium.ttf"; sourceTree = "<group>"; };
+		2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelStruct.swift; sourceTree = "<group>"; };
+		2D0373682B5D9D51003745D6 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		2D03736C2B5FBC16003745D6 /* AddNewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmView.swift; sourceTree = "<group>"; };
+		2D03736E2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmPresenterProtocol.swift; sourceTree = "<group>"; };
+		2D0373702B5FBC6B003745D6 /* AddNewFilmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmRouter.swift; sourceTree = "<group>"; };
+		2D0373752B5FCF60003745D6 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		2D0373772B5FDC02003745D6 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		2D0373792B5FE061003745D6 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
+		2D03737C2B613B86003745D6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		2D0373882B628458003745D6 /* NamePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePresenterProtocol.swift; sourceTree = "<group>"; };
+		2D03738A2B628469003745D6 /* NameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRouter.swift; sourceTree = "<group>"; };
+		2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameDelegate.swift; sourceTree = "<group>"; };
+		2D0373902B652713003745D6 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		2D0373922B6527EE003745D6 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
+		2D0373972B6528C5003745D6 /* LinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPresenter.swift; sourceTree = "<group>"; };
+		2D0373992B652A38003745D6 /* LinkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRouter.swift; sourceTree = "<group>"; };
+		2D03739B2B6530D2003745D6 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		2D0373A02B65320F003745D6 /* RatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPresenter.swift; sourceTree = "<group>"; };
+		2D0373A22B65322B003745D6 /* RatingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingRouter.swift; sourceTree = "<group>"; };
+		2D0373A72B654569003745D6 /* ReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseView.swift; sourceTree = "<group>"; };
+		2D0373A92B65464E003745D6 /* ReleasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasePresenter.swift; sourceTree = "<group>"; };
+		2D0373AB2B654659003745D6 /* ReleaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +124,313 @@
 		2D03731D2B5BD0F1003745D6 /* MovieSaver */ = {
 			isa = PBXGroup;
 			children = (
-				2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */,
-				2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */,
-				2D0373222B5BD0F1003745D6 /* ViewController.swift */,
-				2D0373242B5BD0F1003745D6 /* Main.storyboard */,
-				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
-				2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */,
+				2D0373352B5BD49A003745D6 /* Commons */,
+				2D0373432B5D3BA1003745D6 /* Extentions */,
+				2D03736A2B5FBBC4003745D6 /* Modules */,
+				2D0373362B5BD4BC003745D6 /* Sources */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
 				2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */,
+				2D0373682B5D9D51003745D6 /* ToDo.swift */,
 			);
 			path = MovieSaver;
+			sourceTree = "<group>";
+		};
+		2D0373352B5BD49A003745D6 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */,
+				2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		2D0373362B5BD4BC003745D6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373652B5D7D6F003745D6 /* MovieModel */,
+				2D0373462B5D5CF6003745D6 /* Fonts */,
+				2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */,
+				2D03732A2B5BD0F3003745D6 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2D0373372B5BD56F003745D6 /* MainListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733A2B5BD6ED003745D6 /* view */,
+				2D03733B2B5BD700003745D6 /* presenter */,
+				2D03733E2B5BD732003745D6 /* router */,
+			);
+			path = MainListScreen;
+			sourceTree = "<group>";
+		};
+		2D03733A2B5BD6ED003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373382B5BD6E9003745D6 /* MainScreenViewInputProtocol.swift */,
+				2D0373412B5D388E003745D6 /* MainScreenTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D03733B2B5BD700003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733C2B5BD72B003745D6 /* MainScreenPresenterInputProtocol.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D03733E2B5BD732003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D03733F2B5BD74C003745D6 /* MainScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2D0373432B5D3BA1003745D6 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373442B5D3BB9003745D6 /* UIView + Extensions.swift */,
+				2D0373792B5FE061003745D6 /* UIButton + Extensions.swift */,
+				2D0373552B5D6933003745D6 /* UIFont + Extensions.swift */,
+				2D0373752B5FCF60003745D6 /* UIStackView + Extensions.swift */,
+				2D0373772B5FDC02003745D6 /* UILabel + Extension.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		2D0373462B5D5CF6003745D6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373572B5D697E003745D6 /* Manrope-Bold.ttf */,
+				2D03735B2B5D697E003745D6 /* Manrope-ExtraBold.ttf */,
+				2D03735A2B5D697E003745D6 /* Manrope-ExtraLight.ttf */,
+				2D0373592B5D697E003745D6 /* Manrope-Light.ttf */,
+				2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */,
+				2D0373582B5D697E003745D6 /* Manrope-Regular.ttf */,
+				2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2D0373652B5D7D6F003745D6 /* MovieModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */,
+			);
+			path = MovieModel;
+			sourceTree = "<group>";
+		};
+		2D03736A2B5FBBC4003745D6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373372B5BD56F003745D6 /* MainListScreen */,
+				2D03736B2B5FBBD2003745D6 /* AddNewFilmScreen */,
+				2D03737E2B62813A003745D6 /* AddDetailesForFilm */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2D03736B2B5FBBD2003745D6 /* AddNewFilmScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373722B5FBC73003745D6 /* view */,
+				2D0373732B5FBC7F003745D6 /* presenter */,
+				2D0373742B5FBC93003745D6 /* router */,
+				2D03737B2B613B01003745D6 /* model */,
+			);
+			path = AddNewFilmScreen;
+			sourceTree = "<group>";
+		};
+		2D0373722B5FBC73003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D03736C2B5FBC16003745D6 /* AddNewFilmView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D0373732B5FBC7F003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D03736E2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D0373742B5FBC93003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373702B5FBC6B003745D6 /* AddNewFilmRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2D03737B2B613B01003745D6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2D03737C2B613B86003745D6 /* ImagePickerView.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2D03737E2B62813A003745D6 /* AddDetailesForFilm */ = {
+			isa = PBXGroup;
+			children = (
+				2D03737F2B62814C003745D6 /* AddName */,
+				2D0373802B628309003745D6 /* AddRating */,
+				2D0373812B62830D003745D6 /* AddReleaseDate */,
+				2D0373822B62830F003745D6 /* AddLink */,
+			);
+			path = AddDetailesForFilm;
+			sourceTree = "<group>";
+		};
+		2D03737F2B62814C003745D6 /* AddName */ = {
+			isa = PBXGroup;
+			children = (
+				2D03738F2B652703003745D6 /* view */,
+				2D0373842B6283B6003745D6 /* presenter */,
+				2D0373832B6283B2003745D6 /* router */,
+				2D03738C2B62B4FB003745D6 /* Model */,
+			);
+			path = AddName;
+			sourceTree = "<group>";
+		};
+		2D0373802B628309003745D6 /* AddRating */ = {
+			isa = PBXGroup;
+			children = (
+				2D03739D2B6531DB003745D6 /* view */,
+				2D03739F2B6531EC003745D6 /* presenter */,
+				2D03739E2B6531E4003745D6 /* router */,
+			);
+			path = AddRating;
+			sourceTree = "<group>";
+		};
+		2D0373812B62830D003745D6 /* AddReleaseDate */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373A42B654539003745D6 /* view */,
+				2D0373A52B654547003745D6 /* presenter */,
+				2D0373A62B65454E003745D6 /* router */,
+			);
+			path = AddReleaseDate;
+			sourceTree = "<group>";
+		};
+		2D0373822B62830F003745D6 /* AddLink */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373942B652889003745D6 /* view */,
+				2D0373952B652893003745D6 /* presenter */,
+				2D0373962B65289B003745D6 /* router */,
+			);
+			path = AddLink;
+			sourceTree = "<group>";
+		};
+		2D0373832B6283B2003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D03738A2B628469003745D6 /* NameRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2D0373842B6283B6003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373882B628458003745D6 /* NamePresenterProtocol.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D03738C2B62B4FB003745D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D03738F2B652703003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373902B652713003745D6 /* NameView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D0373942B652889003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373922B6527EE003745D6 /* LinkView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D0373952B652893003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373972B6528C5003745D6 /* LinkPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D0373962B65289B003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373992B652A38003745D6 /* LinkRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2D03739D2B6531DB003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D03739B2B6530D2003745D6 /* RatingView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D03739E2B6531E4003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373A22B65322B003745D6 /* RatingRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2D03739F2B6531EC003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373A02B65320F003745D6 /* RatingPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D0373A42B654539003745D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373A72B654569003745D6 /* ReleaseView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2D0373A52B654547003745D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373A92B65464E003745D6 /* ReleasePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2D0373A62B65454E003745D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373AB2B654659003745D6 /* ReleaseRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +491,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D03735F2B5D697E003745D6 /* Manrope-Regular.ttf in Resources */,
+				2D0373612B5D697E003745D6 /* Manrope-ExtraLight.ttf in Resources */,
 				2D03732E2B5BD0F3003745D6 /* LaunchScreen.storyboard in Resources */,
+				2D03735E2B5D697E003745D6 /* Manrope-Bold.ttf in Resources */,
 				2D03732B2B5BD0F3003745D6 /* Assets.xcassets in Resources */,
-				2D0373262B5BD0F1003745D6 /* Main.storyboard in Resources */,
+				2D0373602B5D697E003745D6 /* Manrope-Light.ttf in Resources */,
+				2D0373642B5D697E003745D6 /* Manrope-Medium.ttf in Resources */,
+				2D0373632B5D697E003745D6 /* Manrope-SemiBold.ttf in Resources */,
+				2D0373622B5D697E003745D6 /* Manrope-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,23 +511,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */,
-				2D0373232B5BD0F1003745D6 /* ViewController.swift in Sources */,
+				2D0373762B5FCF60003745D6 /* UIStackView + Extensions.swift in Sources */,
+				2D03733D2B5BD72B003745D6 /* MainScreenPresenterInputProtocol.swift in Sources */,
+				2D03738E2B62B51C003745D6 /* AddNameDelegate.swift in Sources */,
+				2D0373392B5BD6E9003745D6 /* MainScreenViewInputProtocol.swift in Sources */,
+				2D0373912B652713003745D6 /* NameView.swift in Sources */,
+				2D0373A12B65320F003745D6 /* RatingPresenter.swift in Sources */,
+				2D0373692B5D9D51003745D6 /* ToDo.swift in Sources */,
+				2D03736D2B5FBC16003745D6 /* AddNewFilmView.swift in Sources */,
+				2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */,
 				2D03731F2B5BD0F1003745D6 /* AppDelegate.swift in Sources */,
+				2D03739C2B6530D2003745D6 /* RatingView.swift in Sources */,
+				2D03738B2B628469003745D6 /* NameRouter.swift in Sources */,
+				2D0373A82B654569003745D6 /* ReleaseView.swift in Sources */,
+				2D0373672B5D7DA0003745D6 /* MovieModelStruct.swift in Sources */,
+				2D0373452B5D3BB9003745D6 /* UIView + Extensions.swift in Sources */,
+				2D0373A32B65322B003745D6 /* RatingRouter.swift in Sources */,
+				2D0373782B5FDC02003745D6 /* UILabel + Extension.swift in Sources */,
+				2D0373AA2B65464E003745D6 /* ReleasePresenter.swift in Sources */,
+				2D0373712B5FBC6B003745D6 /* AddNewFilmRouter.swift in Sources */,
+				2D03736F2B5FBC3A003745D6 /* AddNewFilmPresenterProtocol.swift in Sources */,
+				2D0373982B6528C5003745D6 /* LinkPresenter.swift in Sources */,
+				2D0373562B5D6933003745D6 /* UIFont + Extensions.swift in Sources */,
+				2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */,
+				2D03737A2B5FE061003745D6 /* UIButton + Extensions.swift in Sources */,
+				2D0373AC2B654659003745D6 /* ReleaseRouter.swift in Sources */,
+				2D03739A2B652A38003745D6 /* LinkRouter.swift in Sources */,
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,
+				2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */,
+				2D0373892B628458003745D6 /* NamePresenterProtocol.swift in Sources */,
+				2D0373932B6527EE003745D6 /* LinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2D0373242B5BD0F1003745D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D0373252B5BD0F1003745D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2D03732C2B5BD0F3003745D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,9 +687,10 @@
 				DEVELOPMENT_TEAM = C99MZRZS9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieSaver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Using the camera to make photos for creataing posters of movies";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Using the photo Library to load photos for creataing posters of movies";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,9 +716,10 @@
 				DEVELOPMENT_TEAM = C99MZRZS9Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieSaver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Using the camera to make photos for creataing posters of movies";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Using the photo Library to load photos for creataing posters of movies";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
