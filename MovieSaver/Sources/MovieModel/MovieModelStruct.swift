@@ -5,8 +5,8 @@ import Foundation
 struct Movie {
     
     let name: String
-    let rating: Double
-    let relizeData: Data
+    let rating: String
+    let relizeData: String
     let imageName: String
     let youTubeLink: String
     let description: String

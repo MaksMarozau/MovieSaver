@@ -58,7 +58,7 @@ final class AddNewFilmRouter: AddNewFilmRouterInput {
     }
     
     func moveToDataChangeList() {
-        let _ = RealiseDateRouter(navigationController: navigationController, window: window)
+        let _ = ReleaseDateRouter(navigationController: navigationController, window: window)
     }
     
     func moveToLinkChangePage() {

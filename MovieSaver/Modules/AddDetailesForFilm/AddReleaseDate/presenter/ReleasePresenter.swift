@@ -1,22 +1,22 @@
 import Foundation
 
-protocol RealiseDatePresenterProtocol {
+protocol ReleaseDatePresenterProtocol {
     
     func convertDateToString(date: Date)
-    func saveRealiseDate(date: String)
+    func saveReleaseDate(date: String)
 }
 
 
 
-final class RealiseDatePresenter: RealiseDatePresenterProtocol {
+final class ReleaseDatePresenter: ReleaseDatePresenterProtocol {
  
-    unowned let view: RealiseDateViewInputProtocol
-    var router: RealiseDateRouterInputProtocol!
+    unowned let view: ReleaseDateViewInputProtocol
+    var router: ReleaseDateRouterInputProtocol!
     
     var closure: ((String) -> Void)?
     
     
-    init(view: RealiseDateViewInputProtocol) {
+    init(view: ReleaseDateViewInputProtocol) {
         self.view = view
     }
     
@@ -28,7 +28,7 @@ final class RealiseDatePresenter: RealiseDatePresenterProtocol {
         view.getDate(date: dateStr)
     }
     
-    func saveRealiseDate(date: String) {
+    func saveReleaseDate(date: String) {
 
         closure?("link")
         print(closure)

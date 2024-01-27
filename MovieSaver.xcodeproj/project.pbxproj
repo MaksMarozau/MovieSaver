@@ -124,10 +124,10 @@
 		2D03731D2B5BD0F1003745D6 /* MovieSaver */ = {
 			isa = PBXGroup;
 			children = (
-				2D0373352B5BD49A003745D6 /* Applications */,
+				2D0373352B5BD49A003745D6 /* Commons */,
+				2D0373432B5D3BA1003745D6 /* Extentions */,
 				2D03736A2B5FBBC4003745D6 /* Modules */,
 				2D0373362B5BD4BC003745D6 /* Sources */,
-				2D0373432B5D3BA1003745D6 /* Extentions */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
 				2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */,
 				2D0373682B5D9D51003745D6 /* ToDo.swift */,
@@ -135,13 +135,13 @@
 			path = MovieSaver;
 			sourceTree = "<group>";
 		};
-		2D0373352B5BD49A003745D6 /* Applications */ = {
+		2D0373352B5BD49A003745D6 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
 				2D03731E2B5BD0F1003745D6 /* AppDelegate.swift */,
 				2D0373202B5BD0F1003745D6 /* SceneDelegate.swift */,
 			);
-			path = Applications;
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		2D0373362B5BD4BC003745D6 /* Sources */ = {
@@ -229,7 +229,7 @@
 			children = (
 				2D0373372B5BD56F003745D6 /* MainListScreen */,
 				2D03736B2B5FBBD2003745D6 /* AddNewFilmScreen */,
-				2D03737E2B62813A003745D6 /* AddDetailes */,
+				2D03737E2B62813A003745D6 /* AddDetailesForFilm */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		2D03737E2B62813A003745D6 /* AddDetailes */ = {
+		2D03737E2B62813A003745D6 /* AddDetailesForFilm */ = {
 			isa = PBXGroup;
 			children = (
 				2D03737F2B62814C003745D6 /* AddName */,
@@ -285,7 +285,7 @@
 				2D0373812B62830D003745D6 /* AddReleaseDate */,
 				2D0373822B62830F003745D6 /* AddLink */,
 			);
-			path = AddDetailes;
+			path = AddDetailesForFilm;
 			sourceTree = "<group>";
 		};
 		2D03737F2B62814C003745D6 /* AddName */ = {

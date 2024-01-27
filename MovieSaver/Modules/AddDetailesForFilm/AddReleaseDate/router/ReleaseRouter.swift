@@ -1,11 +1,11 @@
 import UIKit
 
-protocol RealiseDateRouterInputProtocol: AnyObject {
+protocol ReleaseDateRouterInputProtocol: AnyObject {
     
     func back()
 }
 
-final class RealiseDateRouter: RealiseDateRouterInputProtocol {
+final class ReleaseDateRouter: ReleaseDateRouterInputProtocol {
     
     private let navigationController: UINavigationController
     private let window: UIWindow
@@ -14,8 +14,8 @@ final class RealiseDateRouter: RealiseDateRouterInputProtocol {
         self.navigationController = navigationController
         self.window = window
         
-        let view = RealiseDateView()
-        let presenter = RealiseDatePresenter(view: view)
+        let view = ReleaseDateView()
+        let presenter = ReleaseDatePresenter(view: view)
         view.presenter = presenter
         presenter.router = self
         

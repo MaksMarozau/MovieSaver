@@ -2,22 +2,22 @@ import UIKit
 
 
 
-protocol RealiseDateViewInputProtocol: AnyObject {
+protocol ReleaseDateViewInputProtocol: AnyObject {
     
     func getDate(date: String)
 }
 
-//MARK: - Final class RealiseDateView
+//MARK: - Final class ReleaseDateView
 
-final class RealiseDateView: UIViewController {
+final class ReleaseDateView: UIViewController {
     
     
 //MARK: - Properties of class
     
-    var presenter: RealiseDatePresenterProtocol!
+    var presenter: ReleaseDatePresenterProtocol!
     
-    private let realiseDateLabel = UILabel()
-    private let realiseDatePickerView = UIDatePicker()
+    private let releaseDateLabel = UILabel()
+    private let releaseDatePickerView = UIDatePicker()
     private let saveButton = UIButton()
     
     private let date: Date = Date()
@@ -29,7 +29,7 @@ final class RealiseDateView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubViews(with: realiseDateLabel, realiseDatePickerView, saveButton)
+        view.addSubViews(with: releaseDateLabel, releaseDatePickerView, saveButton)
         
         setConstraintes()
         configureUI()
@@ -58,22 +58,22 @@ final class RealiseDateView: UIViewController {
     
     private func setConstraintes() {
         
-        realiseDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        realiseDateLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
-        realiseDateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        realiseDateLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
-        realiseDateLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        releaseDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        releaseDateLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        releaseDateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        releaseDateLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        releaseDateLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         
-        realiseDatePickerView.translatesAutoresizingMaskIntoConstraints = false
-        realiseDatePickerView.topAnchor.constraint(equalTo: realiseDateLabel.bottomAnchor, constant: 32).isActive = true
-        realiseDatePickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        realiseDatePickerView.heightAnchor.constraint(equalToConstant: 131).isActive = true
-        realiseDatePickerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        releaseDatePickerView.translatesAutoresizingMaskIntoConstraints = false
+        releaseDatePickerView.topAnchor.constraint(equalTo: releaseDateLabel.bottomAnchor, constant: 32).isActive = true
+        releaseDatePickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        releaseDatePickerView.heightAnchor.constraint(equalToConstant: 131).isActive = true
+        releaseDatePickerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
         
         saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.topAnchor.constraint(equalTo: realiseDatePickerView.bottomAnchor, constant: 32).isActive = true
+        saveButton.topAnchor.constraint(equalTo: releaseDatePickerView.bottomAnchor, constant: 32).isActive = true
         saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: 27).isActive = true
         saveButton.widthAnchor.constraint(equalToConstant: 79).isActive = true
@@ -87,13 +87,13 @@ final class RealiseDateView: UIViewController {
         
         view.backgroundColor = .backgroundMain
         
-        realiseDateLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
-        realiseDateLabel.text = "Your Rating"
+        releaseDateLabel.setHeadlinesLabelTextAttrs(ofSize: 24)
+        releaseDateLabel.text = "Your Rating"
         
-        realiseDatePickerView.datePickerMode = .date
-        realiseDatePickerView.maximumDate = .now
-        realiseDatePickerView.preferredDatePickerStyle = .wheels
-        realiseDatePickerView.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
+        releaseDatePickerView.datePickerMode = .date
+        releaseDatePickerView.maximumDate = .now
+        releaseDatePickerView.preferredDatePickerStyle = .wheels
+        releaseDatePickerView.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
                         
         saveButton.setTitle("Save", for: .normal)
         saveButton.setTitleColor(.blueButton, for: .normal)
@@ -112,15 +112,15 @@ final class RealiseDateView: UIViewController {
     
     
     @objc private func saveTapped() {
-        presenter.saveRealiseDate(date: dateStr)
+        presenter.saveReleaseDate(date: dateStr)
     }
 }
 
 
 
-//MARK: - Extension of RealiseDateView with RealiseDateViewInputProtocol
+//MARK: - Extension of ReleaseDateView with ReleaseDateViewInputProtocol
 
-extension RealiseDateView: RealiseDateViewInputProtocol {
+extension ReleaseDateView: ReleaseDateViewInputProtocol {
     
     func getDate(date: String) {
         self.dateStr = date
