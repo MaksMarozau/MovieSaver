@@ -97,18 +97,20 @@ final class AddNewFilmPresenter: AddNewFilmPresenterOutputProtocol  {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             let result = CoreDataManager.instance.saveMovie(name: name, rating: rating, release: release, link: link, image: image, description: description)
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let success):
-                    print("Saved")
-                    self.router.back()
+            switch result {
+            case .success(_):
+                print("Saved")
+                DispatchQueue.main.async {
                     Notification.saved.getDescriptionAbout()
-                case .failure(let failure):
-                    print("\(failure)")
+                }
+            case .failure(let failure):
+                print("\(failure)")
+                DispatchQueue.main.async {
                     Notification.didNotSave.getDescriptionAbout()
                 }
             }
         }
+        self.router.back()
     }
     
     
