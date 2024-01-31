@@ -18,16 +18,15 @@ final class ReleaseDatePresenter: ReleaseDatePresenterProtocol {
 //MARK: - Properties of class
 
     unowned let view: ReleaseDateViewInputProtocol
-    var router: ReleaseDateRouterInputProtocol!
-    
-    var closure: ((String) -> Void)?
-    
+    private let router: ReleaseDateRouterInputProtocol
+        
     
     
 //MARK: - Initialization of properties
 
-    init(view: ReleaseDateViewInputProtocol) {
+    init(view: ReleaseDateViewInputProtocol, router: ReleaseDateRouterInputProtocol) {
         self.view = view
+        self.router = router
     }
     
     
@@ -41,10 +40,7 @@ final class ReleaseDatePresenter: ReleaseDatePresenterProtocol {
         view.getDate(date: dateStr)
     }
     
-    
     func saveReleaseDate(date: String) {
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(date: date)
     }
 }

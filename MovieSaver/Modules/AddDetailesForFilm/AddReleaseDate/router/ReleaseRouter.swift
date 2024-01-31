@@ -3,7 +3,7 @@ import UIKit
 //MARK: - Protocols for extention ReleaseDateRouter with MVP-archetecture's methods
 
 protocol ReleaseDateRouterInputProtocol: AnyObject {
-    func back()
+    func back(date: String)
 }
 
 
@@ -18,22 +18,23 @@ final class ReleaseDateRouter: ReleaseDateRouterInputProtocol {
 
     private let navigationController: UINavigationController
     private let window: UIWindow
+    weak var delegate: AddFilmDataDelegate?
     
     
     
 //MARK: - Initialization of properties
 
-    init(navigationController: UINavigationController, window: UIWindow) {
+    init(navigationController: UINavigationController, window: UIWindow, delegate: AddFilmDataDelegate) {
         self.navigationController = navigationController
         self.window = window
+        self.delegate = delegate
         
         
         //MARK: - Making of dependencies
 
         let view = ReleaseDateView()
-        let presenter = ReleaseDatePresenter(view: view)
+        let presenter = ReleaseDatePresenter(view: view, router: self)
         view.presenter = presenter
-        presenter.router = self
         
         navigationController.pushViewController(view, animated: true)
     }
@@ -42,7 +43,8 @@ final class ReleaseDateRouter: ReleaseDateRouterInputProtocol {
     
 //MARK: - Methods from protocol ReleaseDateRouterInputProtocol
 
-    func back() {
+    func back(date: String) {
+        delegate?.filmDataSave(by: date)
         navigationController.popViewController(animated: true)
     }
 }

@@ -36,7 +36,7 @@
 		2D03737D2B613B86003745D6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03737C2B613B86003745D6 /* ImagePickerView.swift */; };
 		2D0373892B628458003745D6 /* NamePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373882B628458003745D6 /* NamePresenterProtocol.swift */; };
 		2D03738B2B628469003745D6 /* NameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03738A2B628469003745D6 /* NameRouter.swift */; };
-		2D03738E2B62B51C003745D6 /* AddNameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */; };
+		2D03738E2B62B51C003745D6 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03738D2B62B51C003745D6 /* DataDelegate.swift */; };
 		2D0373912B652713003745D6 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373902B652713003745D6 /* NameView.swift */; };
 		2D0373932B6527EE003745D6 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373922B6527EE003745D6 /* LinkView.swift */; };
 		2D0373982B6528C5003745D6 /* LinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373972B6528C5003745D6 /* LinkPresenter.swift */; };
@@ -50,6 +50,9 @@
 		2D0373B42B657448003745D6 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373B32B657448003745D6 /* DetailInfoView.swift */; };
 		2D0373B62B657799003745D6 /* DetailInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373B52B657799003745D6 /* DetailInfoPresenter.swift */; };
 		2D0373B82B6577A9003745D6 /* DetailInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373B72B6577A9003745D6 /* DetailInfoRouter.swift */; };
+		2D0373C42B692018003745D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373C32B692018003745D6 /* CoreDataManager.swift */; };
+		2D0373C62B69202D003745D6 /* ErrorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373C52B69202D003745D6 /* ErrorsManager.swift */; };
+		2D0373C82B6A560F003745D6 /* Notification Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373C72B6A560F003745D6 /* Notification Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +87,7 @@
 		2D03737C2B613B86003745D6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		2D0373882B628458003745D6 /* NamePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePresenterProtocol.swift; sourceTree = "<group>"; };
 		2D03738A2B628469003745D6 /* NameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRouter.swift; sourceTree = "<group>"; };
-		2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameDelegate.swift; sourceTree = "<group>"; };
+		2D03738D2B62B51C003745D6 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
 		2D0373902B652713003745D6 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		2D0373922B6527EE003745D6 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
 		2D0373972B6528C5003745D6 /* LinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPresenter.swift; sourceTree = "<group>"; };
@@ -98,6 +101,9 @@
 		2D0373B32B657448003745D6 /* DetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		2D0373B52B657799003745D6 /* DetailInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoPresenter.swift; sourceTree = "<group>"; };
 		2D0373B72B6577A9003745D6 /* DetailInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoRouter.swift; sourceTree = "<group>"; };
+		2D0373C32B692018003745D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2D0373C52B69202D003745D6 /* ErrorsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsManager.swift; sourceTree = "<group>"; };
+		2D0373C72B6A560F003745D6 /* Notification Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 				2D0373352B5BD49A003745D6 /* Commons */,
 				2D0373432B5D3BA1003745D6 /* Extentions */,
 				2D03736A2B5FBBC4003745D6 /* Modules */,
+				2D0373C22B691FF5003745D6 /* Support */,
 				2D0373362B5BD4BC003745D6 /* Sources */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
 				2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */,
@@ -237,6 +244,7 @@
 				2D03736B2B5FBBD2003745D6 /* AddNewFilmScreen */,
 				2D03737E2B62813A003745D6 /* AddDetailesForFilm */,
 				2D0373AF2B6573B4003745D6 /* DetailInfoScreen */,
+				2D03738C2B62B4FB003745D6 /* Contract Delegate */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -301,7 +309,6 @@
 				2D03738F2B652703003745D6 /* view */,
 				2D0373842B6283B6003745D6 /* presenter */,
 				2D0373832B6283B2003745D6 /* router */,
-				2D03738C2B62B4FB003745D6 /* Model */,
 			);
 			path = AddName;
 			sourceTree = "<group>";
@@ -352,12 +359,12 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
-		2D03738C2B62B4FB003745D6 /* Model */ = {
+		2D03738C2B62B4FB003745D6 /* Contract Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				2D03738D2B62B51C003745D6 /* AddNameDelegate.swift */,
+				2D03738D2B62B51C003745D6 /* DataDelegate.swift */,
 			);
-			path = Model;
+			path = "Contract Delegate";
 			sourceTree = "<group>";
 		};
 		2D03738F2B652703003745D6 /* view */ = {
@@ -474,6 +481,16 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		2D0373C22B691FF5003745D6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2D0373C32B692018003745D6 /* CoreDataManager.swift */,
+				2D0373C52B69202D003745D6 /* ErrorsManager.swift */,
+				2D0373C72B6A560F003745D6 /* Notification Manager.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,12 +571,14 @@
 				2D0373292B5BD0F1003745D6 /* MovieSaver.xcdatamodeld in Sources */,
 				2D0373762B5FCF60003745D6 /* UIStackView + Extensions.swift in Sources */,
 				2D03733D2B5BD72B003745D6 /* MainScreenPresenter.swift in Sources */,
-				2D03738E2B62B51C003745D6 /* AddNameDelegate.swift in Sources */,
+				2D03738E2B62B51C003745D6 /* DataDelegate.swift in Sources */,
 				2D0373392B5BD6E9003745D6 /* MainScreenView.swift in Sources */,
 				2D0373912B652713003745D6 /* NameView.swift in Sources */,
+				2D0373C62B69202D003745D6 /* ErrorsManager.swift in Sources */,
 				2D0373A12B65320F003745D6 /* RatingPresenter.swift in Sources */,
 				2D0373692B5D9D51003745D6 /* ToDo.swift in Sources */,
 				2D03736D2B5FBC16003745D6 /* AddNewFilmView.swift in Sources */,
+				2D0373C82B6A560F003745D6 /* Notification Manager.swift in Sources */,
 				2D0373B82B6577A9003745D6 /* DetailInfoRouter.swift in Sources */,
 				2D0373B42B657448003745D6 /* DetailInfoView.swift in Sources */,
 				2D0373402B5BD74C003745D6 /* MainScreenRouter.swift in Sources */,
@@ -584,6 +603,7 @@
 				2D0373212B5BD0F1003745D6 /* SceneDelegate.swift in Sources */,
 				2D0373422B5D388E003745D6 /* MainScreenTableViewCell.swift in Sources */,
 				2D0373892B628458003745D6 /* NamePresenterProtocol.swift in Sources */,
+				2D0373C42B692018003745D6 /* CoreDataManager.swift in Sources */,
 				2D0373932B6527EE003745D6 /* LinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

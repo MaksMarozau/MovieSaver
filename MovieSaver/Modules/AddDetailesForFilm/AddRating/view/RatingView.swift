@@ -95,7 +95,7 @@ final class RatingView: UIViewController {
 //MARK: - Actions
     
     @objc private func saveTapped() {
-        
+    
         presenter.saveRating(rating: rating)
     }
 }
@@ -123,6 +123,6 @@ extension RatingView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        rating = String (row / 10)
+        rating = String(Double(row) / 10)
     }
 }

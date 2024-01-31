@@ -26,6 +26,7 @@ final class ReleaseDateView: UIViewController {
     private var dateStr: String = ""
     
     
+    
 //MARK: - Lifecycle of controller
     
     override func viewDidLoad() {
@@ -110,7 +111,6 @@ final class ReleaseDateView: UIViewController {
         let date = sender.date
         presenter.convertDateToString(date: date)
     }
-    
     
     @objc private func saveTapped() {
         presenter.saveReleaseDate(date: dateStr)

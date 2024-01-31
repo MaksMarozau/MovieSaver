@@ -108,7 +108,3 @@ final class LinkView: UIViewController {
         presenter.saveLink(link: link)
     }
 }
-    
-
-
-    //MARK: - Extention Extention for MainScreenViewController with protocol MainScreenView

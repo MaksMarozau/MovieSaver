@@ -1,4 +1,5 @@
 import Foundation
+import UIKit.UIImage
 
 //MARK: - Protocols for extention DetailInfoPresenter with MVP-archetecture's methods
 
@@ -38,19 +39,25 @@ final class DetailInfoPresenter: DetailInfoPresenterProtocol {
     func loadData() {
         let name = movie.name
         let rating = movie.rating
-        let releaseData = movie.releaseData
-        let description = movie.description
-        let link = movie.youTubeLink
+        let releaseDate = movie.releaseDate
+        let description = movie.descript
+        let link = movie.link
+        let imageData = movie.imageData
         
-        var releaseYear = ""
-        var counter = 0
-        for i in releaseData {
-            if counter >= releaseData.count - 4 {
-                releaseYear = releaseYear + "\(i)"
+        if let name, let rating, let releaseDate, let description, let link, let imageData {
+            
+            var releaseYear = ""
+            var counter = 0
+            for i in releaseDate {
+                if counter >= releaseDate.count - 4 {
+                    releaseYear = releaseYear + "\(i)"
+                }
+                counter += 1
             }
-            counter += 1
+            
+            let image = UIImage(data: imageData)
+            view.getData(with: name, rating, releaseYear, description, link, image)
         }
-        view.getData(with: name, rating, releaseYear, description, link)
     }
     
     

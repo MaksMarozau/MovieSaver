@@ -6,7 +6,7 @@ protocol AddNewFilmViewInputProtocol: AnyObject {
     
     func updateNameLabel(name: String)
     func updateRatingLabel(rating: String)
-    func updateDataLabel(data: String)
+    func updateReleaseDataLabel(data: String)
     func updateLinkLabel(link: String)
     func updatePosterImageView(image: UIImage)
 }
@@ -20,7 +20,7 @@ final class AddNewFilmView: UIViewController {
     
 //MARK: - Properties of class
     
-    var presenter: AddNewFilmPresenterProtocol!
+    var presenter: AddNewFilmPresenterOutputProtocol!
    
     private let mainContainerView = UIView()
     
@@ -83,7 +83,6 @@ final class AddNewFilmView: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
-        presenter.viewWillAppear()
     }
     
     
@@ -103,7 +102,8 @@ final class AddNewFilmView: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Add new"
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .save, primaryAction: UIAction(handler: { [ weak self ] _ in
-            self?.presenter.saveTapped()
+            let description = self?.descriptionTextView.text
+            self?.presenter.saveTapped(with: description)
         }))
     }
     
@@ -370,7 +370,7 @@ extension AddNewFilmView: AddNewFilmViewInputProtocol {
         ratingValueLabel.text = rating
     }
     
-    func updateDataLabel(data: String) {
+    func updateReleaseDataLabel(data: String) {
         dataValueLabel.text = data
     }
     

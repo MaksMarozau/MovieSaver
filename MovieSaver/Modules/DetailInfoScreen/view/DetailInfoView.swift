@@ -5,7 +5,7 @@ import WebKit
 
 protocol DetailInfoViewInputProtocol: AnyObject {
     func showTrailer(by url: URL)
-    func getData(with name: String, _ rating: String, _ relieaseDate: String, _ description: String, _ link: String)
+    func getData(with name: String, _ rating: String, _ relieaseDate: String, _ description: String, _ link: String, _ image: UIImage?)
 }
 
 
@@ -36,7 +36,6 @@ class DetailInfoView: UIViewController {
     
     private let trailerLinkButton = UIButton()
     private let trailerWebKiView = WKWebView()
-    
     
     private var link = ""
         
@@ -207,15 +206,13 @@ class DetailInfoView: UIViewController {
         starImageView.image = UIImage(systemName: "star.fill")
         starImageView.tintColor = .customYellow
         
-        ratingLabel.font = .manrope(ofSize: 14, style: .regular)
+        ratingLabel.font = .manrope(ofSize: 14, style: .bold)
         ratingLabel.textAlignment = .center
         ratingLabel.textColor = .fontSemyBlack
-        ratingLabel.attributedText = setAttributedText(with: "6.0/10")
         
         dateLabel.font = .manrope(ofSize: 14, style: .regular)
         dateLabel.textAlignment = .center
         dateLabel.textColor = .fontLiteGray
-        dateLabel.text = "2023"
         
         
         //TrailerView's subViews
@@ -233,7 +230,6 @@ class DetailInfoView: UIViewController {
         descriptionLabel.font = .manrope(ofSize: 14, style: .regular)
         descriptionLabel.textAlignment = .left
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man."
     }
     
     
@@ -251,11 +247,11 @@ class DetailInfoView: UIViewController {
         
     private func setAttributedText(with text: String?) -> NSAttributedString? {
         
-        guard let text = text, text.count == 6 else { return nil }
+        guard let text = text else { return nil }
         let attributedText = NSMutableAttributedString(string: text)
-        let range = NSRange(location: 0, length: 3)
-        
-        attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 14, style: .bold), range: range)
+        let range = (text as NSString).range(of: "/10")
+
+        attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 14, style: .regular), range: range)
         return attributedText
     }
 }
@@ -266,15 +262,15 @@ class DetailInfoView: UIViewController {
 
 extension DetailInfoView: DetailInfoViewInputProtocol {
     
-    func getData(with name: String, _ rating: String, _ relieaseDate: String, _ description: String, _ link: String) {
+    func getData(with name: String, _ rating: String, _ relieaseDate: String, _ description: String, _ link: String, _ image: UIImage?) {
         
+        posterImageView.image = image
         titleLabel.text = name
-        ratingLabel.text = rating
+        ratingLabel.attributedText = setAttributedText(with: "\(rating)/10")
         dateLabel.text = relieaseDate
         descriptionLabel.text = description
         self.link = link
     }
-    
     
     func showTrailer(by url: URL) {
         
