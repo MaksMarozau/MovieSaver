@@ -14,17 +14,20 @@ final class LinkPresenter: LinkPresenterProtocol {
     
 //MARK: - Properties of class
 
-    var router: LinkRouterInputProtocol!
-        
-    var closure: ((String) -> Void)?
+    private let router: LinkRouterInputProtocol
     
-  
+    
+    
+//MARK: - Initialization of properties
+    init(router: LinkRouterInputProtocol) {
+        self.router = router
+    }
+        
+    
     
 //MARK: - Methods from protocol LinkPresenterProtocol
 
     func saveLink(link: String) {
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(link: link)
     }
 }

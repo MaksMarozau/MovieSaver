@@ -2,22 +2,28 @@ import UIKit.UIViewController
 
 //MARK: - Protocol for extention AddNewFilmPresenter with MVP-archetecture's methods
 
-protocol AddNewFilmPresenterProtocol {
+protocol AddNewFilmPresenterOutputProtocol {
     
     func addPosterTapped(with viewController: UIViewController)
-    func saveTapped()
+    func saveTapped(with description: String?)
     func nameChangeTapped()
     func ratingChangeTapped()
     func dataChangeTapped()
     func linkChangeTapped()
-    func viewWillAppear()
+}
+
+
+
+protocol AddNewFilmPresenterInputProtocol {
+    
+    func filmNameSave(by name: String?, rating: String?, release: String?, link: String?)
 }
 
 
 
 //MARK: - Final class AddNewFilmPresenter
 
-final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
+final class AddNewFilmPresenter: AddNewFilmPresenterOutputProtocol  {
     
     
 //MARK: - Properties of class
@@ -25,9 +31,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
     unowned private let view: AddNewFilmViewInputProtocol
     private let router: AddNewFilmRouterInputProtocol
     private let imagePicker: ImagePickerView
-        
-    private let namePresenter = NamePresenter()
-    
+            
     private var name: String? {
         didSet {
             if let name {
@@ -35,6 +39,40 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
             }
         }
     }
+    
+    private var rating: String? {
+        didSet {
+            if let rating {
+                view.updateRatingLabel(rating: rating)
+            }
+        }
+    }
+    
+    private var release: String? {
+        didSet {
+            if let release {
+                view.updateReleaseDataLabel(data: release)
+            }
+        }
+    }
+    
+    private var link: String? {
+        didSet {
+            if let link {
+                view.updateLinkLabel(link: link)
+            }
+        }
+    }
+    
+    private var image: UIImage? {
+        didSet {
+            if let image {
+                view.updatePosterImageView(image: image)
+            }
+        }
+    }
+    
+    private var description: String?
         
 
     
@@ -44,23 +82,29 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
         self.view = view
         self.router = router
         self.imagePicker = imagePicker
-        
-        namePresenter.delegate = self
     }
     
     
     
 //MARK: - Methods from protocol AddNewFilmPresenter
     
-    func viewWillAppear() {
-        namePresenter.closure = { [weak self] text in
-            print(text)
-            self?.name = text
+    func saveTapped(with description: String?) {
+        
+        self.description = description
+        
+        guard let name, let rating, let release, let link, let image, let description else { Notification.fieldIsEmpty.getDescriptionAbout(); return }
+        
+        let result = CoreDataManager.instance.saveMovie(name: name, rating: rating, release: release, link: link, image: image, description: description)
+        
+        switch result {
+        case .success(let success):
+            print("Saved")
+            Notification.saved.getDescriptionAbout()
+        case .failure(let failure):
+            print("\(failure)")
+            Notification.didNotSave.getDescriptionAbout()
         }
-    }
-    
-    
-    func saveTapped() {
+        
         router.back()
     }
     
@@ -71,13 +115,13 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
             self.imagePicker.showImagePickerController(on: viewController, with: .camera)
             self.imagePicker.onImagePicked = { [weak self] image in
-                self?.view.updatePosterImageView(image: image)
+                self?.image = image
             }
         }))
         actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { action in
             self.imagePicker.showImagePickerController(on: viewController, with: .gallery)
             self.imagePicker.onImagePicked = { [weak self] image in
-                self?.view.updatePosterImageView(image: image)
+                self?.image = image
             }
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -94,7 +138,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
     }
     
     func dataChangeTapped() {
-        router.moveToDataChangeList()
+        router.moveToReleaseDataChangeList()
     }
     
     func linkChangeTapped() {
@@ -104,11 +148,22 @@ final class AddNewFilmPresenter: AddNewFilmPresenterProtocol  {
 
 
 
-//MARK: - Extension for AddNewFilmPresenter with NamePresenterDelegate
+//MARK: - Extension for AddNewFilmPresenter with AddNewFilmPresenterInputProtocol
 
-extension AddNewFilmPresenter: NamePresenterDelegate {
+extension AddNewFilmPresenter: AddNewFilmPresenterInputProtocol {
     
-    func filmNameSaved(by name: String) {
-        self.name = name
+    func filmNameSave(by name: String?, rating: String?, release: String?, link: String?) {
+        if let name {
+            self.name = name
+        }
+        if let rating {
+            self.rating = rating
+        }
+        if let release {
+            self.release = release
+        }
+        if let link {
+            self.link = link
+        }
     }
 }

@@ -13,17 +13,21 @@ final class RatingPresenter: RatingPresenterProtocol {
     
 //MARK: - Properties of class
 
-    var router: RatingRouterInputProtocol!
-    var closure: ((String) -> Void)?
+    private let router: RatingRouterInputProtocol
+    
+    
+    
+//MARK: - Initialization of properties
+
+    init(router: RatingRouterInputProtocol) {
+        self.router = router
+    }
     
     
     
 //MARK: - Methods from protocol RatingPresenterProtocol
 
     func saveRating(rating: String) {
-        
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(rating: rating)
     }
 }
