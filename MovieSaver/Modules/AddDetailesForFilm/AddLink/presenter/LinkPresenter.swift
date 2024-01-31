@@ -1,3 +1,5 @@
+//MARK: - Protocols for extention LinkPresenter with MVP-archetecture's methods
+
 protocol LinkPresenterProtocol {
     
     func saveLink(link: String)
@@ -5,17 +7,27 @@ protocol LinkPresenterProtocol {
 
 
 
+//MARK: - Final class LinkPresenter
+
 final class LinkPresenter: LinkPresenterProtocol {
 
-    var router: LinkRouterInputProtocol!
+    
+//MARK: - Properties of class
+
+    private let router: LinkRouterInputProtocol
+    
+    
+    
+//MARK: - Initialization of properties
+    init(router: LinkRouterInputProtocol) {
+        self.router = router
+    }
         
-    var closure: ((String) -> Void)?
     
     
+//MARK: - Methods from protocol LinkPresenterProtocol
+
     func saveLink(link: String) {
-        
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(link: link)
     }
 }

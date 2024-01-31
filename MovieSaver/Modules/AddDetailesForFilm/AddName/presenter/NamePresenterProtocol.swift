@@ -1,34 +1,33 @@
+//MARK: - Protocols for extention NamePresenter with MVP-archetecture's methods
+
 protocol NamePresenterProtocol {
-    
     func saveName(name: String)
 }
 
-protocol NamePresenterDelegate: AnyObject {
-    
-    func filmNameSaved(by name: String)
-}
 
 
+//MARK: - Final class NamePresenter
 
 final class NamePresenter: NamePresenterProtocol {
 
-//    private var name = ""
-    var router: NameRouterInputProtocol!
-    weak var delegate: NamePresenterDelegate?
     
-    var closure: ((String) -> Void)?
-    
-//    init(router: NameRouterInputProtocol) {
-//        self.router = router
-//    }
+//MARK: - Properties of class
+
+    private let router: NameRouterInputProtocol
+        
     
     
+//MARK: - Initialization of properties
+
+    init(router: NameRouterInputProtocol) {
+        self.router = router
+    }
+    
+    
+    
+//MARK: - Methods from protocol NamePresenterProtocol
+
     func saveName(name: String) {
-//        self.name = name
-        closure?("Mike")
-//        print(self.name)
-        print(closure)
-//        delegate?.filmNameSaved(by: name)
-        router.back()
+        router.back(name: name)
     }
 }

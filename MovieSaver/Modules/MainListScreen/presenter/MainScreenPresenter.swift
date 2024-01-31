@@ -2,7 +2,7 @@
 
 protocol MainScreenPresenterProtocol: AnyObject {
     
-    func tableViewsCellTapped()
+    func tableViewsCellTapped(with movie: Movie)
     func addButtonTapped()
     func loadData()
 }
@@ -17,9 +17,7 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
 //MARK: - Properties of class
     
     unowned private let view: MainScreenViewInputProtocol
-    private let router: MainScreenRouterInput
-    
-    private var moviesDataArray: [Movie] = []
+    private let router: MainScreenRouterInputProtocol
     
 
     
@@ -34,8 +32,8 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
     
 //MARK: - Methods from protocol MainScreenPresenterProtocol
     
-    func tableViewsCellTapped() {
-        router.moveToDetailInfoPage()
+    func tableViewsCellTapped(with movie: Movie) {
+        router.moveToDetailInfoPage(with: movie)
     }
     
     func addButtonTapped() {
@@ -43,6 +41,12 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
     }
     
     func loadData() {
-        view.updateData(moviesDataArray)
+        let result = CoreDataManager.instance.loadMovies()
+        switch result {
+        case .success(let success):
+            view.updateData(success)
+        case .failure(let failure):
+            print(failure)
+        }
     }
 }

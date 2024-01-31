@@ -1,21 +1,33 @@
+//MARK: - Protocols for extention RatingPresenter with MVP-archetecture's methods
+
 protocol RatingPresenterProtocol {
-    
     func saveRating(rating: String)
 }
 
 
 
+//MARK: - Final class RatingPresenter
+
 final class RatingPresenter: RatingPresenterProtocol {
 
-    var router: RatingRouterInputProtocol!
-        
-    var closure: ((String) -> Void)?
+    
+//MARK: - Properties of class
+
+    private let router: RatingRouterInputProtocol
     
     
+    
+//MARK: - Initialization of properties
+
+    init(router: RatingRouterInputProtocol) {
+        self.router = router
+    }
+    
+    
+    
+//MARK: - Methods from protocol RatingPresenterProtocol
+
     func saveRating(rating: String) {
-        
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(rating: rating)
     }
 }

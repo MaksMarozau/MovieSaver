@@ -2,9 +2,9 @@ import UIKit
 
 //MARK: - Protocol for extention MainScreenRouter with MVP-archetecture's methods
 
-protocol MainScreenRouterInput {
+protocol MainScreenRouterInputProtocol {
     
-    func moveToDetailInfoPage()
+    func moveToDetailInfoPage(with movie: Movie)
     func moveToAddNewPage()
 }
 
@@ -12,7 +12,7 @@ protocol MainScreenRouterInput {
 
 //MARK: - Final class MainScreenRouter
 
-final class MainScreenRouter: MainScreenRouterInput {
+final class MainScreenRouter: MainScreenRouterInputProtocol {
     
     
 //MARK: - Properties of class
@@ -40,15 +40,13 @@ final class MainScreenRouter: MainScreenRouterInput {
     
     
     
-//MARK: - Methods from protocol MainScreenRouterInput
+//MARK: - Methods from protocol MainScreenRouterInputProtocol
     
-    func moveToDetailInfoPage() {
-        
+    func moveToDetailInfoPage(with movie: Movie) {
+        let _ = DetailInfoRouter(navigationController: navigationController, window: window, with: movie)
     }
     
-    
     func moveToAddNewPage() {
-        
         let _ = AddNewFilmRouter(navigationController: navigationController, window: window)
     }
 }
