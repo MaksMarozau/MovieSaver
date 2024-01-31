@@ -26,7 +26,6 @@
 		2D0373632B5D697E003745D6 /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */; };
 		2D0373642B5D697E003745D6 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */; };
 		2D0373672B5D7DA0003745D6 /* MovieModelStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */; };
-		2D0373692B5D9D51003745D6 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373682B5D9D51003745D6 /* ToDo.swift */; };
 		2D03736D2B5FBC16003745D6 /* AddNewFilmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03736C2B5FBC16003745D6 /* AddNewFilmView.swift */; };
 		2D03736F2B5FBC3A003745D6 /* AddNewFilmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03736E2B5FBC3A003745D6 /* AddNewFilmPresenter.swift */; };
 		2D0373712B5FBC6B003745D6 /* AddNewFilmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0373702B5FBC6B003745D6 /* AddNewFilmRouter.swift */; };
@@ -77,7 +76,6 @@
 		2D03735C2B5D697E003745D6 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
 		2D03735D2B5D697E003745D6 /* Manrope-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Medium.ttf"; sourceTree = "<group>"; };
 		2D0373662B5D7DA0003745D6 /* MovieModelStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelStruct.swift; sourceTree = "<group>"; };
-		2D0373682B5D9D51003745D6 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		2D03736C2B5FBC16003745D6 /* AddNewFilmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmView.swift; sourceTree = "<group>"; };
 		2D03736E2B5FBC3A003745D6 /* AddNewFilmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmPresenter.swift; sourceTree = "<group>"; };
 		2D0373702B5FBC6B003745D6 /* AddNewFilmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFilmRouter.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				2D0373362B5BD4BC003745D6 /* Sources */,
 				2D03732F2B5BD0F3003745D6 /* Info.plist */,
 				2D0373272B5BD0F1003745D6 /* MovieSaver.xcdatamodeld */,
-				2D0373682B5D9D51003745D6 /* ToDo.swift */,
 			);
 			path = MovieSaver;
 			sourceTree = "<group>";
@@ -576,7 +573,6 @@
 				2D0373912B652713003745D6 /* NameView.swift in Sources */,
 				2D0373C62B69202D003745D6 /* ErrorsManager.swift in Sources */,
 				2D0373A12B65320F003745D6 /* RatingPresenter.swift in Sources */,
-				2D0373692B5D9D51003745D6 /* ToDo.swift in Sources */,
 				2D03736D2B5FBC16003745D6 /* AddNewFilmView.swift in Sources */,
 				2D0373C82B6A560F003745D6 /* Notification Manager.swift in Sources */,
 				2D0373B82B6577A9003745D6 /* DetailInfoRouter.swift in Sources */,
