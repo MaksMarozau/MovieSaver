@@ -1,3 +1,5 @@
+import UIKit.UIViewController
+
 //MARK: - Protocols for extention MainScreenPresenter with MVP-archetecture's methods
 
 protocol MainScreenPresenterProtocol: AnyObject {
@@ -41,12 +43,17 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
     }
     
     func loadData() {
-        let result = CoreDataManager.instance.loadMovies()
-        switch result {
-        case .success(let success):
-            view.updateData(success)
-        case .failure(let failure):
-            print(failure)
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.sync {
+            let result = CoreDataManager.instance.loadMovies()
+            switch result {
+            case .success(let success):
+                DispatchQueue.main.async {
+                    self.view.updateData(success)
+                }
+            case .failure(let failure):
+                print(failure)
+            }
         }
     }
 }

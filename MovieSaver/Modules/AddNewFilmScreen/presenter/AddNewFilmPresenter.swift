@@ -95,7 +95,7 @@ final class AddNewFilmPresenter: AddNewFilmPresenterOutputProtocol  {
         guard let name, let rating, let release, let link, let image, let description else { Notification.fieldIsEmpty.getDescriptionAbout(); return }
         
         let queue = DispatchQueue.global(qos: .utility)
-        queue.async {
+        queue.sync {
             let result = CoreDataManager.instance.saveMovie(name: name, rating: rating, release: release, link: link, image: image, description: description)
             switch result {
             case .success(_):
