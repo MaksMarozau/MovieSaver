@@ -1,5 +1,7 @@
 import UIKit.UIAlert
 
+//MARK: - Enum Notification, wich includes notifications cases and can create an alert with description of the current notification
+
 enum Notification {
     
     case greeting
@@ -8,6 +10,7 @@ enum Notification {
     case saved
     
     
+    //Method of creating the description of the notification with an alert
     func getDescriptionAbout() {
         switch self {
         case .greeting:

@@ -9,6 +9,7 @@ enum CoreDataError: Error {
     case loadError
     
     
+    //Creating the description of the error
     func description() -> String {
         switch self {
         case .appDelegateError:
@@ -24,5 +25,3 @@ enum CoreDataError: Error {
         }
     }
 }
-
-
