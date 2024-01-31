@@ -84,8 +84,8 @@ final class MainScreenTableViewCell: UITableViewCell {
         containerView.clipsToBounds = true
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        containerView.layer.shadowOpacity = 50
-        containerView.layer.shadowRadius = 10
+        containerView.layer.shadowOpacity = 0.5
+        containerView.layer.shadowRadius = 12
         
         moviePosterImageView.backgroundColor = .lightGray
         
