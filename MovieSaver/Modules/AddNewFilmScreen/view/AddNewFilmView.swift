@@ -6,7 +6,7 @@ protocol AddNewFilmViewInputProtocol: AnyObject {
     
     func updateNameLabel(name: String)
     func updateRatingLabel(rating: String)
-    func updateDataLabel(data: String)
+    func updateReleaseDataLabel(data: String)
     func updateLinkLabel(link: String)
     func updatePosterImageView(image: UIImage)
 }
@@ -20,7 +20,7 @@ final class AddNewFilmView: UIViewController {
     
 //MARK: - Properties of class
     
-    var presenter: AddNewFilmPresenterProtocol!
+    var presenter: AddNewFilmPresenterOutputProtocol!
    
     private let mainContainerView = UIView()
     
@@ -83,7 +83,6 @@ final class AddNewFilmView: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
-        presenter.viewWillAppear()
     }
     
     
@@ -102,9 +101,9 @@ final class AddNewFilmView: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Add new"
-//        navigationController?.navigationBar.topItem?.backBarButtonItem?.isHidden = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .save, primaryAction: UIAction(handler: { [ weak self ] _ in
-            self?.presenter.saveTapped()
+            let description = self?.descriptionTextView.text
+            self?.presenter.saveTapped(with: description)
         }))
     }
     
@@ -278,27 +277,27 @@ final class AddNewFilmView: UIViewController {
         linkStackView.axis = .vertical
         
             //nameStackView's subViews
-        nameLabel.setStandatrtLabelTextAttrs(with: "Name")
-        nameValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        nameChangeButton.setChangeButtonAttrs()
+            nameLabel.setStandatrtLabelTextAttrs(with: "Name")
+            nameValueLabel.setStandatrtLabelTextAttrs(with: "-")
+            nameChangeButton.setChangeButtonAttrs()
 
         
             //ratingStackView's subViews
-        ratingLabel.setStandatrtLabelTextAttrs(with: "Your Rating")
-        ratingValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        ratingChangeButton.setChangeButtonAttrs()
+            ratingLabel.setStandatrtLabelTextAttrs(with: "Your Rating")
+            ratingValueLabel.setStandatrtLabelTextAttrs(with: "-")
+            ratingChangeButton.setChangeButtonAttrs()
 
             
             //dataStackView's subViews
-        dataLabel.setStandatrtLabelTextAttrs(with: "Release Date")
-        dataValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        dataChangeButton.setChangeButtonAttrs()
+            dataLabel.setStandatrtLabelTextAttrs(with: "Release Date")
+            dataValueLabel.setStandatrtLabelTextAttrs(with: "-")
+            dataChangeButton.setChangeButtonAttrs()
 
             
             //linkStackView's subViews
-        linkLabel.setStandatrtLabelTextAttrs(with: "YouTube Link")
-        linkValueLabel.setStandatrtLabelTextAttrs(with: "-")
-        linkChangeButton.setChangeButtonAttrs()
+            linkLabel.setStandatrtLabelTextAttrs(with: "YouTube Link")
+            linkValueLabel.setStandatrtLabelTextAttrs(with: "-")
+            linkChangeButton.setChangeButtonAttrs()
 
 
         
@@ -371,7 +370,7 @@ extension AddNewFilmView: AddNewFilmViewInputProtocol {
         ratingValueLabel.text = rating
     }
     
-    func updateDataLabel(data: String) {
+    func updateReleaseDataLabel(data: String) {
         dataValueLabel.text = data
     }
     

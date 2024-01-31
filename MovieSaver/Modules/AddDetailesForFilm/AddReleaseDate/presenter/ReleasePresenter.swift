@@ -1,5 +1,7 @@
 import Foundation
 
+//MARK: - Protocols for extention ReleaseDatePresenter with MVP-archetecture's methods
+
 protocol ReleaseDatePresenterProtocol {
     
     func convertDateToString(date: Date)
@@ -8,19 +10,29 @@ protocol ReleaseDatePresenterProtocol {
 
 
 
+//MARK: - Final class ReleaseDatePresenter
+
 final class ReleaseDatePresenter: ReleaseDatePresenterProtocol {
  
+    
+//MARK: - Properties of class
+
     unowned let view: ReleaseDateViewInputProtocol
-    var router: ReleaseDateRouterInputProtocol!
+    private let router: ReleaseDateRouterInputProtocol
+        
     
-    var closure: ((String) -> Void)?
     
-    
-    init(view: ReleaseDateViewInputProtocol) {
+//MARK: - Initialization of properties
+
+    init(view: ReleaseDateViewInputProtocol, router: ReleaseDateRouterInputProtocol) {
         self.view = view
+        self.router = router
     }
     
     
+    
+//MARK: - Methods from protocol ReleaseDatePresenterProtocol
+
     func convertDateToString(date: Date) {
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMMM yyyy"
@@ -29,9 +41,6 @@ final class ReleaseDatePresenter: ReleaseDatePresenterProtocol {
     }
     
     func saveReleaseDate(date: String) {
-
-        closure?("link")
-        print(closure)
-        router.back()
+        router.back(date: date)
     }
 }

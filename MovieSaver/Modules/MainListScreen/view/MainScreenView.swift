@@ -38,6 +38,8 @@ final class MainScreenView: UIViewController {
 
         setConstraintes()
         configureUI()
+        
+        Notification.greeting.getDescriptionAbout()
     }
     
     
@@ -54,6 +56,7 @@ final class MainScreenView: UIViewController {
     
     private func configureNavigationBar() {
         
+        navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add, primaryAction: UIAction(handler: { [weak self]_ in
             self?.presenter.addButtonTapped()
@@ -98,7 +101,7 @@ final class MainScreenView: UIViewController {
 
 
 
-//MARK: - Extention for MainScreenViewController with protocols UITableView
+//MARK: - Extention for MainScreenView with protocols UITableView
 
 extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     
@@ -110,20 +113,26 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let movie = movies[indexPath.row]
+        let imageData = movie.imageData
+        let name = movie.name
+        let rating = movie.rating
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainScreenTableViewCell", for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
         
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        cell.addContent(imageName: movie.imageName, movieName: movie.name, ratingScore: movie.rating)
         
+        if let imageData, let name, let rating {
+            let image = UIImage(data: imageData)
+            cell.addContent(image: image, movieName: name, ratingScore: rating)
+        }
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.tableViewsCellTapped()
-        
+        let movie = movies[indexPath.row]
+        presenter.tableViewsCellTapped(with: movie)
     }
 }
 
