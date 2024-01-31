@@ -93,7 +93,7 @@ final class MainScreenTableViewCell: UITableViewCell {
         
         scoreLabel.backgroundColor = .clear
         scoreLabel.textColor = .fontBlack
-        scoreLabel.font = .manrope(ofSize: 18, style: .regular)
+        scoreLabel.font = .manrope(ofSize: 18, style: .bold)
         scoreLabel.textAlignment = .center
         scoreLabel.numberOfLines = 1
         
@@ -107,11 +107,10 @@ final class MainScreenTableViewCell: UITableViewCell {
     
     private func setAttributedText(with text: String?) -> NSAttributedString? {
         
-        guard let text = text, text.count == 6 else { return nil }
+        guard let text = text else { return nil }
         let attributedText = NSMutableAttributedString(string: text)
-        let range = NSRange(location: 0, length: 3)
-        
-        attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 18, style: .bold), range: range)
+        let range = (text as NSString).range(of: "/10")
+        attributedText.addAttribute(.font, value: UIFont.manrope(ofSize: 18, style: .regular), range: range)
         return attributedText
     }
     
@@ -119,9 +118,9 @@ final class MainScreenTableViewCell: UITableViewCell {
     
 //MARK: - Adding of content to cell (public method)
     
-    func addContent(imageName: String, movieName: String, ratingScore: String) {
+    func addContent(image: UIImage?, movieName: String, ratingScore: String) {
         
-        moviePosterImageView.image = UIImage(named: imageName)
+        moviePosterImageView.image = image
         nameLabel.setStandatrtLabelTextAttrs(with: movieName)
         scoreLabel.attributedText = setAttributedText(with: "\(ratingScore)/10")
     }

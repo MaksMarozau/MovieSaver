@@ -38,6 +38,8 @@ final class MainScreenView: UIViewController {
 
         setConstraintes()
         configureUI()
+        
+        Notification.greeting.getDescriptionAbout()
     }
     
     
@@ -46,8 +48,6 @@ final class MainScreenView: UIViewController {
         
         configureNavigationBar()
         viewWillStart()
-        
-        testCell()
     }
     
     
@@ -113,13 +113,19 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let movie = movies[indexPath.row]
+        let imageData = movie.imageData
+        let name = movie.name
+        let rating = movie.rating
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainScreenTableViewCell", for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
         
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        cell.addContent(imageName: movie.imageName, movieName: movie.name, ratingScore: movie.rating)
         
+        if let imageData, let name, let rating {
+            let image = UIImage(data: imageData)
+            cell.addContent(image: image, movieName: name, ratingScore: rating)
+        }
         return cell
     }
     
@@ -127,17 +133,6 @@ extension MainScreenView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
         presenter.tableViewsCellTapped(with: movie)
-        
-    }
-    
-    
-    
-    private func testCell() {
-        
-        let film = Movie(name: "Spider-Man: No Way Home", rating: "9.3", releaseData: "22.08.2023", imageName: "", youTubeLink: "link", description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man. With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.")
-        
-        movies.append(film)
-        tableView.reloadData()
     }
 }
 

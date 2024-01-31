@@ -46,7 +46,6 @@ final class MainScreenRouter: MainScreenRouterInputProtocol {
         let _ = DetailInfoRouter(navigationController: navigationController, window: window, with: movie)
     }
     
-    
     func moveToAddNewPage() {
         let _ = AddNewFilmRouter(navigationController: navigationController, window: window)
     }

@@ -19,8 +19,6 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
     unowned private let view: MainScreenViewInputProtocol
     private let router: MainScreenRouterInputProtocol
     
-    private var moviesDataArray: [Movie] = []
-    
 
     
 //MARK: - Initialization of properties
@@ -43,6 +41,12 @@ final class MainScreenPresenter: MainScreenPresenterProtocol {
     }
     
     func loadData() {
-        view.updateData(moviesDataArray)
+        let result = CoreDataManager.instance.loadMovies()
+        switch result {
+        case .success(let success):
+            view.updateData(success)
+        case .failure(let failure):
+            print(failure)
+        }
     }
 }
